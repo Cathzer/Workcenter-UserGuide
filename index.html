@@ -19,6 +19,23 @@
         <span class="brand-divider" aria-hidden="true"></span>
         <span class="brand-label">Panduan penggunaan<br>Quality Workspace</span>
       </a>
+      <label class="mobile-jump">
+        <span>Lompat ke</span>
+        <select id="mobile-section-select" aria-label="Lompat ke bagian panduan">
+          <option value="ringkasan">Ringkasan</option>
+          <option value="admin">Admin</option>
+          <option value="operator">Operator</option>
+          <option value="production-spv">Production SPV</option>
+          <option value="production-head">Production Head</option>
+          <option value="inspector">Inspector</option>
+          <option value="qc-spv">QC SPV</option>
+          <option value="qc-head">QC Head</option>
+          <option value="viewer">Viewer</option>
+          <option value="hak-akses">Hak akses</option>
+          <option value="email">Email</option>
+          <option value="faq">FAQ</option>
+        </select>
+      </label>
     </div>
   </header>
 
@@ -34,7 +51,7 @@
             <span><strong>3</strong> tahap tanda tangan</span>
             <span>Diperbarui <strong>14 September 2026</strong></span>
           </div>
-          <p class="role-prompt">Saya masuk sebagai</p>
+          <p class="role-prompt"><span>Saya masuk sebagai</span><span class="role-swipe-hint" aria-hidden="true">Geser pilihan →</span></p>
           <div class="role-picker" role="group" aria-label="Pilih peran untuk memfilter panduan">
             <button class="role-chip" type="button" data-role-filter="all" aria-pressed="true">Semua alur</button>
             <button class="role-chip" type="button" data-role-filter="admin" aria-pressed="false">Admin</button>
@@ -858,7 +875,10 @@
   </footer>
 
   <dialog class="image-dialog" id="image-dialog" aria-label="Pratinjau gambar">
-    <button class="dialog-close" type="button" data-close-dialog>Tutup ×</button>
+    <div class="dialog-toolbar">
+      <p class="dialog-hint">Cubit untuk memperbesar atau geser untuk melihat detail.</p>
+      <button class="dialog-close" type="button" data-close-dialog>Tutup ×</button>
+    </div>
     <div class="dialog-stage" id="dialog-stage">
       <img class="dialog-image" id="dialog-image" alt="">
     </div>

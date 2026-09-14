@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dialogImage = document.querySelector('#dialog-image');
   const dialogStage = document.querySelector('#dialog-stage');
   const closeDialog = document.querySelector('[data-close-dialog]');
+  const mobileSectionSelect = document.querySelector('#mobile-section-select');
 
   let activeRole = 'all';
 
@@ -122,6 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  mobileSectionSelect?.addEventListener('change', () => {
+    const target = document.getElementById(mobileSectionSelect.value);
+    const targetRole = target?.dataset.roleSection;
+    if (targetRole && target.hidden) setRole(targetRole);
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
   searchInput.addEventListener('input', applySearch);
   clearSearch.addEventListener('click', () => {
     searchInput.value = '';
@@ -138,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
       button.querySelectorAll('.annotation-marker').forEach((marker) => {
         dialogStage.append(marker.cloneNode(true));
       });
+      dialog.classList.toggle('mobile-source', button.closest('.shot')?.classList.contains('mobile'));
       document.body.classList.add('modal-open');
       dialog.showModal();
       closeDialog.focus();
@@ -148,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dialog.open) dialog.close();
     document.body.classList.remove('modal-open');
     dialogImage.removeAttribute('src');
+    dialog.classList.remove('mobile-source');
     dialogStage.querySelectorAll('.annotation-marker').forEach((marker) => marker.remove());
   };
 
@@ -187,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tocButtons.forEach((button) => {
           button.classList.toggle('active', button.dataset.target === visible.target.id);
         });
+        if (mobileSectionSelect) mobileSectionSelect.value = visible.target.id;
       },
       { rootMargin: '-20% 0px -68% 0px', threshold: [0, 0.05, 0.2] },
     );
@@ -194,5 +205,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const requestedRole = new URLSearchParams(location.search).get('role') || 'all';
+
+  document.querySelectorAll('.matrix').forEach((table) => {
+    const labels = [...table.querySelectorAll('thead th')].map((heading) => heading.textContent.trim());
+    table.querySelectorAll('tbody tr').forEach((row) => {
+      [...row.cells].forEach((cell, index) => {
+        cell.dataset.label = labels[index] || '';
+      });
+    });
+  });
+
   setRole(requestedRole);
 });
