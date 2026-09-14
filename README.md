@@ -8,7 +8,7 @@ Buka `index.html` langsung di browser, atau jalankan static server dari root rep
 
 ## Deployment
 
-Push ke branch `main` akan menjalankan workflow **Deploy user guide to GitHub Pages**. Artifact yang dipublikasikan hanya berisi:
+GitHub Pages memublikasikan situs langsung dari root branch `main`. File situs yang digunakan adalah:
 
 - `index.html`
 - `styles.css`
@@ -16,4 +16,4 @@ Push ke branch `main` akan menjalankan workflow **Deploy user guide to GitHub Pa
 - folder `assets/`
 - folder `fonts/`
 
-Repository ini tidak memerlukan environment variable maupun credential aplikasi.
+Repository ini tidak memerlukan build step, environment variable, maupun credential aplikasi.
