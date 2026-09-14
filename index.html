@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Panduan penggunaan Sansico Quality Workspace untuk Admin, Operator, Production, Inspector, QC, dan Viewer.">
+  <title>Panduan Penggunaan · Sansico Quality Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="guide.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#isi-panduan">Lewati ke isi panduan</a>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#atas" aria-label="Kembali ke awal panduan">
+        <span class="brand-word">Sansico®</span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-label">Panduan penggunaan<br>Quality Workspace</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="atas">
+    <section class="hero" aria-labelledby="judul-panduan">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Panduan kerja · Produksi &amp; kualitas</p>
+          <h1 id="judul-panduan">Satu alur, dari catatan hingga <em>persetujuan.</em></h1>
+          <p class="hero-copy">Ikuti pekerjaan sesuai peran Anda. Setiap langkah menunjukkan tindakan, hasil yang diharapkan, dan tampilan aplikasi yang akan ditemui.</p>
+          <div class="hero-meta" aria-label="Ringkasan panduan">
+            <span><strong>8</strong> peran pengguna</span>
+            <span><strong>3</strong> tahap tanda tangan</span>
+            <span>Diperbarui <strong>14 September 2026</strong></span>
+          </div>
+          <p class="role-prompt">Saya masuk sebagai</p>
+          <div class="role-picker" role="group" aria-label="Pilih peran untuk memfilter panduan">
+            <button class="role-chip" type="button" data-role-filter="all" aria-pressed="true">Semua alur</button>
+            <button class="role-chip" type="button" data-role-filter="admin" aria-pressed="false">Admin</button>
+            <button class="role-chip" type="button" data-role-filter="operator" aria-pressed="false">Operator</button>
+            <button class="role-chip" type="button" data-role-filter="production-spv" aria-pressed="false">Production SPV</button>
+            <button class="role-chip" type="button" data-role-filter="production-head" aria-pressed="false">Production Dept Head</button>
+            <button class="role-chip" type="button" data-role-filter="inspector" aria-pressed="false">Inspector</button>
+            <button class="role-chip" type="button" data-role-filter="qc-spv" aria-pressed="false">QC SPV</button>
+            <button class="role-chip" type="button" data-role-filter="qc-head" aria-pressed="false">QC Dept Head</button>
+            <button class="role-chip" type="button" data-role-filter="viewer" aria-pressed="false">Viewer</button>
+          </div>
+        </div>
+
+        <div class="pipeline-wrap" aria-label="Urutan proses utama">
+          <div class="pipeline">
+            <div class="pipeline-stage">
+              <span class="pipeline-index">01</span>
+              <div><strong>Operator mencatat</strong><span>Data produksi, reject, dan satu foto bukti.</span></div>
+            </div>
+            <div class="pipeline-stage">
+              <span class="pipeline-index">02</span>
+              <div><strong>Production mengajukan</strong><span>SPV sebagai penanggung jawab utama; Dept Head sebagai pengganti saat diperlukan.</span></div>
+            </div>
+            <div class="pipeline-stage">
+              <span class="pipeline-index">03</span>
+              <div><strong>Inspector memeriksa</strong><span>Hanya laporan dari workcenter yang ditugaskan.</span></div>
+            </div>
+            <div class="pipeline-stage">
+              <span class="pipeline-index">04</span>
+              <div><strong>QC menyelesaikan</strong><span>Persetujuan akhir oleh QC SPV atau QC Dept Head.</span></div>
+            </div>
+            <p class="pipeline-note"><strong>Kunci data:</strong> entri masih dapat dikoreksi oleh pihak berwenang sampai tanda tangan Production pertama diberikan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="guide-shell" id="isi-panduan">
+      <aside class="guide-nav" aria-label="Navigasi panduan">
+        <div>
+          <h2 class="guide-nav-title">Cari langkah</h2>
+          <p class="guide-nav-copy">Ketik kata seperti “foto”, “undangan”, “tolak”, atau “tanda tangan”.</p>
+          <div class="search-wrap">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m16.2 16.2 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input class="guide-search" id="guide-search" type="search" placeholder="Cari di panduan…" autocomplete="off">
+            <button class="clear-search" type="button" aria-label="Hapus pencarian" data-clear-search>×</button>
+          </div>
+        </div>
+        <p class="search-status" id="search-status" aria-live="polite"></p>
+        <nav class="toc" aria-label="Daftar peran">
+          <button type="button" data-target="ringkasan" class="active">Ringkasan alur</button>
+          <button type="button" data-target="admin" data-role-nav="admin">Admin</button>
+          <button type="button" data-target="operator" data-role-nav="operator">Operator</button>
+          <button type="button" data-target="production-spv" data-role-nav="production-spv">Production SPV</button>
+          <button type="button" data-target="production-head" data-role-nav="production-head">Production Dept Head</button>
+          <button type="button" data-target="inspector" data-role-nav="inspector">Inspector</button>
+          <button type="button" data-target="qc-spv" data-role-nav="qc-spv">QC SPV</button>
+          <button type="button" data-target="qc-head" data-role-nav="qc-head">QC Dept Head</button>
+          <button type="button" data-target="viewer" data-role-nav="viewer">Viewer</button>
+          <button type="button" data-target="hak-akses">Hak edit &amp; kunci data</button>
+          <button type="button" data-target="email">Email &amp; notifikasi</button>
+          <button type="button" data-target="faq">Pertanyaan umum</button>
+        </nav>
+        <p class="nav-help"><strong>Tip membaca</strong>Klik gambar untuk memperbesar. Pilih satu peran di bagian atas untuk menampilkan langkah yang relevan saja.</p>
+      </aside>
+
+      <div class="guide-main">
+        <section class="overview" id="ringkasan" data-search-section>
+          <p class="section-kicker">Mulai di sini</p>
+          <h2>Alur singkat seluruh tim</h2>
+          <p class="lead">Satu laporan bergerak berurutan. Orang berikutnya baru bertindak setelah tahap sebelumnya selesai, sehingga status dan tanggung jawab selalu jelas.</p>
+
+          <div class="rules">
+            <div class="rule"><strong>Identitas berasal dari akun</strong><span>Nama operator tidak diketik ulang saat input. Sistem mengambil identitas dari akun yang sedang masuk.</span></div>
+            <div class="rule"><strong>Satu tanda tangan mengunci</strong><span>Begitu Production mengajukan dan menandatangani, data sumber tidak dapat diedit lagi.</span></div>
+            <div class="rule"><strong>Penolakan harus beralasan</strong><span>Inspector atau QC dapat menolak. Alasannya masuk ke jejak keputusan dan menjadi dasar revisi berikutnya.</span></div>
+          </div>
+
+          <div class="flow-map" aria-label="Flowchart penggunaan aplikasi">
+            <div class="flow-track">
+              <div class="flow-node"><small>Persiapan</small><strong>Admin menata akses</strong><p>Role, workcenter, penugasan Inspector, dan undangan.</p></div>
+              <div class="flow-node"><small>Pencatatan</small><strong>Operator mengirim data</strong><p>Output, reject, waktu, catatan, dan bukti foto.</p></div>
+              <div class="flow-node"><small>Tahap 1</small><strong>Production menandatangani</strong><p>Meninjau isi lalu mengajukan laporan dan mengunci data.</p></div>
+              <div class="flow-node"><small>Tahap 2</small><strong>Inspector memeriksa</strong><p>Memastikan kondisi lapangan dan bukti sesuai workcenter.</p></div>
+              <div class="flow-node"><small>Tahap 3</small><strong>QC menyetujui akhir</strong><p>Laporan final siap dibaca, ditelusuri, dan dicetak.</p></div>
+            </div>
+          </div>
+          <p class="flow-exception"><strong>Jalur pengganti:</strong> Production Dept Head dapat mengambil alih pengajuan bila Production SPV tidak tersedia. Alasan pengambilalihan wajib dicatat; urutan persetujuan tidak berubah.</p>
+        </section>
+
+        <section class="chapter" id="admin" data-role-section="admin" data-search-section>
+          <div class="chapter-head">
+            <span class="role-number">01</span>
+            <div>
+              <p class="section-kicker">Pengelola sistem</p>
+              <h2>Admin</h2>
+              <p class="chapter-summary">Menyiapkan siapa dapat masuk, peran masing-masing, workcenter yang boleh diakses, serta jalur undangan yang aman.</p>
+              <div class="role-tags"><span class="role-tag yes">Kelola akun</span><span class="role-tag yes">Kelola penugasan</span><span class="role-tag no">Tidak menyetujui laporan</span></div>
+            </div>
+          </div>
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Persiapan</span></div>
+              <h3>Masuk ke Pengguna &amp; akses</h3>
+              <p class="step-copy">Buka menu <strong>Pengguna &amp; akses</strong>. Pastikan daftar workcenter dan email pemeriksa sudah benar sebelum membuat undangan.</p>
+              <ul class="checklist"><li>Production SPV menjadi penanggung jawab utama draft.</li><li>Inspector ditugaskan hanya ke workcenter yang benar.</li><li>QC SPV dan QC Dept Head disiapkan sebagai pemberi keputusan akhir.</li></ul>
+              <figure class="shot detail">
+                <button class="shot-button" type="button" data-zoom="assets/admin-inspector-assignment.png" aria-label="Perbesar pengaturan penugasan Inspector">
+                  <img src="assets/admin-inspector-assignment.png" alt="Panel Admin untuk mengatur email notifikasi dan workcenter Inspector" loading="lazy">
+                  <span class="annotation-marker" style="--x:51%;--y:23%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:51%;--y:55%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:18%;--y:91%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Mulai dari penugasan yang benar.</strong><span>Inspector hanya menerima workcenter yang dicentang.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Isi email notifikasi pemeriksa.</li><li><b>2</b> Pilih workcenter tugas Inspector.</li><li><b>3</b> Simpan untuk menerapkan akses.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Undangan</span></div>
+              <h3>Tetapkan identitas sebelum link dibuat</h3>
+              <p class="step-copy">Isi nama, NIK/username, role, dan workcenter. Data ini <strong>dikunci di dalam undangan</strong>, sehingga penerima tidak dapat mengganti identitas atau role saat aktivasi.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/admin-invite-form.png" aria-label="Perbesar tampilan pembuatan undangan">
+                  <img src="assets/admin-invite-form.png" alt="Form Admin untuk menetapkan nama, username, role, dan workcenter sebelum link undangan dibuat" loading="lazy">
+                  <span class="annotation-marker" style="--x:27%;--y:35%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:74%;--y:35%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:49%;--y:52%" aria-hidden="true">3</span>
+                  <span class="annotation-marker" style="--x:22%;--y:69%" aria-hidden="true">4</span>
+                </button>
+                <figcaption><strong>Buat undangan sesuai tanggung jawab.</strong><span>Contoh tampilan aplikasi dengan data non-operasional.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Tetapkan nama penerima.</li><li><b>2</b> Tetapkan NIK/username.</li><li><b>3</b> Pilih role sebelum link dibuat.</li><li><b>4</b> Batasi workcenter sesuai tugas.</li></ol>
+              </figure>
+              <div class="callout"><strong>Bedakan cara pengiriman.</strong> Undangan pemeriksa dikirim ke email yang ditetapkan Admin. Undangan Operator menghasilkan link sekali pakai yang disalin dan diberikan langsung kepada orangnya.</div>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Kontrol akses</span></div>
+              <h3>Aktifkan izin mengundang Operator bila diperlukan</h3>
+              <p class="step-copy">Admin dapat memberi izin kepada Inspector, QC, dan Production agar mereka dapat membuat link undangan Operator. Izin ini sebaiknya hanya diberikan kepada pengguna yang memang bertanggung jawab atas tenaga kerja di area tersebut.</p>
+              <figure class="shot detail">
+                <button class="shot-button" type="button" data-zoom="assets/admin-invite-permission.png" aria-label="Perbesar pengaturan izin undangan Operator">
+                  <img src="assets/admin-invite-permission.png" alt="Kontrol Admin untuk memberi izin mengundang Operator dan mencabut sesi lama" loading="lazy">
+                  <span class="annotation-marker" style="--x:28%;--y:41%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:12%;--y:77%" aria-hidden="true">2</span>
+                </button>
+                <figcaption><strong>Izin dapat diberikan per akun.</strong><span>Penyimpanan perubahan sekaligus mencabut sesi lama.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Centang hanya pada penanggung jawab.</li><li><b>2</b> Simpan perubahan akses.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">4</span><span>Pemeliharaan</span></div>
+              <h3>Cabut sesi atau reset PIN setelah verifikasi</h3>
+              <p class="step-copy">Jika Operator lupa PIN, verifikasi identitasnya lalu lakukan reset dari panel Admin. Jika perangkat hilang atau akun tidak lagi digunakan, cabut sesi aktif dan nonaktifkan aksesnya.</p>
+              <figure class="shot detail">
+                <button class="shot-button" type="button" data-zoom="assets/admin-reset-pin.png" aria-label="Perbesar dialog reset PIN Operator">
+                  <img src="assets/admin-reset-pin.png" alt="Dialog Admin untuk reset PIN sementara, mengubah role, dan menonaktifkan akun Operator" loading="lazy">
+                  <span class="annotation-marker" style="--x:53%;--y:45%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:77%;--y:62%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:84%;--y:87%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Reset dilakukan setelah identitas diverifikasi.</strong><span>Perubahan kredensial akan mengakhiri sesi lama.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Isi PIN sementara hanya saat reset.</li><li><b>2</b> Nonaktifkan akun bila akses harus dihentikan.</li><li><b>3</b> Simpan perubahan.</li></ol>
+              </figure>
+              <div class="callout warning"><strong>Jangan kirim PIN melalui grup.</strong> Berikan PIN sementara langsung kepada pemilik akun dan minta ia menggantinya pada kesempatan pertama.</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="chapter" id="operator" data-role-section="operator" data-search-section>
+          <div class="chapter-head">
+            <span class="role-number">02</span>
+            <div>
+              <p class="section-kicker">Pencatatan di lapangan</p>
+              <h2>Operator</h2>
+              <p class="chapter-summary">Mengaktifkan akun melalui link pribadi, masuk dengan username + PIN 6 digit, lalu mencatat satu part untuk satu slot waktu beserta foto bukti.</p>
+              <div class="role-tags"><span class="role-tag yes">Input produksi</span><span class="role-tag yes">Edit sebelum terkunci</span><span class="role-tag no">Tidak perlu Gmail</span></div>
+            </div>
+          </div>
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Aktivasi pertama</span></div>
+              <h3>Buka link pribadi dan buat PIN</h3>
+              <p class="step-copy">Periksa nama, role, workcenter, dan username yang sudah ditetapkan pengundang. Jika semuanya benar, buat <strong>PIN pribadi 6 digit</strong>, ulangi PIN, centang konfirmasi identitas, lalu aktifkan akun.</p>
+              <figure class="shot mobile">
+                <button class="shot-button" type="button" data-zoom="assets/operator-activation.png" aria-label="Perbesar tampilan aktivasi akun Operator">
+                  <img src="assets/operator-activation.png" alt="Layar aktivasi Operator dengan identitas dari undangan, PIN enam digit, dan konfirmasi kepemilikan" loading="lazy">
+                  <span class="annotation-marker" style="--x:50%;--y:17%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:50%;--y:43%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:12%;--y:74%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Identitas tidak dapat diubah penerima.</strong><span>Link berlaku 24 jam dan hanya sekali pakai.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Cocokkan nama, role, dan workcenter.</li><li><b>2</b> Buat dan ulangi PIN pribadi.</li><li><b>3</b> Konfirmasi identitas sebelum aktivasi.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Masuk</span></div>
+              <h3>Gunakan username dan PIN—bukan akun Google</h3>
+              <p class="step-copy">Pilih mode <strong>Operator</strong> di halaman masuk. Ketik username dan PIN 6 digit. Akun dibuat untuk digunakan sendiri pada HP pribadi; jangan meminjamkan sesi kepada Operator lain.</p>
+              <figure class="shot mobile">
+                <button class="shot-button" type="button" data-zoom="assets/operator-login.png" aria-label="Perbesar halaman login Operator">
+                  <img src="assets/operator-login.png" alt="Halaman masuk Operator dengan pilihan mode, username, dan PIN enam digit" loading="lazy">
+                  <span class="annotation-marker" style="--x:21%;--y:38%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:50%;--y:53%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:50%;--y:67%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Operator memakai username + PIN.</strong><span>Tidak ada pemilihan akun Gmail.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Pastikan mode Operator aktif.</li><li><b>2</b> Masukkan username undangan.</li><li><b>3</b> Masukkan PIN 6 digit.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Input produksi</span></div>
+              <h3>Isi kondisi sesuai slot pencatatan</h3>
+              <p class="step-copy">Pilih tanggal produksi, workcenter, shift, jam, part number, kategori, output, nomor order, dan kode pallet. Untuk Shift 3 setelah tengah malam, gunakan <strong>tanggal awal produksi shift</strong>.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/operator-production-fields.png" aria-label="Perbesar form input produksi">
+                  <img src="assets/operator-production-fields.png" alt="Form informasi produksi dengan tanggal, workcenter, shift, jam, part, order, pallet, dan output" loading="lazy">
+                  <span class="annotation-marker" style="--x:27%;--y:32%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:74%;--y:46%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:27%;--y:73%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Satu pengiriman untuk satu part dan satu slot.</strong><span>Nama Operator otomatis berasal dari akun.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Cocokkan tanggal dan workcenter.</li><li><b>2</b> Pilih shift serta jam pencatatan.</li><li><b>3</b> Lengkapi identitas part dan output.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">4</span><span>Reject</span></div>
+              <h3>Cari kode reject, lalu isi jumlah kejadiannya</h3>
+              <p class="step-copy">Gunakan pencarian kode/deskripsi atau filter proses dan severity—tidak perlu menggulir ratusan pilihan. Tambahkan hanya kode yang terjadi, isi jumlah, dan hapus baris yang keliru sebelum mengirim.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/operator-reject-search.png" aria-label="Perbesar pemilihan kode reject">
+                  <img src="assets/operator-reject-search.png" alt="Bagian pencarian kode reject dengan filter proses dan hasil yang dapat ditambahkan" loading="lazy">
+                  <span class="annotation-marker" style="--x:48%;--y:27%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:24%;--y:41%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:94%;--y:68%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Pencarian mempersempit pilihan kode.</strong><span>Pastikan jumlah reject sesuai bukti dan kondisi aktual.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Ketik kode atau deskripsi cacat.</li><li><b>2</b> Persempit lagi berdasarkan proses.</li><li><b>3</b> Tekan tambah pada kode yang terjadi.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">5</span><span>Bukti foto</span></div>
+              <h3>Ambil foto langsung atau pilih dari galeri</h3>
+              <p class="step-copy">Tekan <strong>Ambil foto</strong> untuk membuka kamera belakang. Jika kamera tidak terbuka, ambil foto dari aplikasi Kamera lalu pilih <strong>Ganti dari galeri</strong>. Periksa pratinjau sebelum mengirim.</p>
+              <div class="shot-pair">
+                <figure class="shot mobile">
+                  <button class="shot-button" type="button" data-zoom="assets/operator-foto.png" aria-label="Perbesar tombol kamera Operator">
+                    <img src="assets/operator-foto.png" alt="Tampilan mobile tombol ambil foto dan pilih dari galeri" loading="lazy">
+                    <span class="annotation-marker" style="--x:79%;--y:20%" aria-hidden="true">1</span>
+                    <span class="annotation-marker" style="--x:79%;--y:30%" aria-hidden="true">2</span>
+                  </button>
+                  <figcaption><strong>Pilih sumber foto.</strong><span>Kamera belakang atau galeri.</span></figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/operator-photo-capture.png" aria-label="Perbesar pratinjau foto bukti Operator">
+                    <img src="assets/operator-photo-capture.png" alt="Pratinjau bukti foto, nama file, tombol hapus, dan catatan Operator" loading="lazy">
+                    <span class="annotation-marker" style="--x:49%;--y:50%" aria-hidden="true">3</span>
+                    <span class="annotation-marker" style="--x:49%;--y:91%" aria-hidden="true">4</span>
+                  </button>
+                  <figcaption><strong>Periksa hasil sebelum kirim.</strong><span>Foto dan catatan harus sesuai kondisi.</span></figcaption>
+                </figure>
+              </div>
+              <ol class="annotation-key paired-key" aria-label="Keterangan anotasi"><li><b>1</b> Buka kamera belakang.</li><li><b>2</b> Alternatif: pilih dari galeri.</li><li><b>3</b> Periksa pratinjau.</li><li><b>4</b> Tambahkan catatan yang relevan.</li></ol>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">6</span><span>Koreksi</span></div>
+              <h3>Edit segera bila ada kesalahan</h3>
+              <p class="step-copy">Operator dapat memperbaiki entri miliknya selama laporan belum ditandatangani Production. Setelah tanda tangan pertama, data terkunci; hubungi atasan jika diperlukan revisi yang tercatat.</p>
+              <figure class="shot detail">
+                <button class="shot-button" type="button" data-zoom="assets/operator-edit-reason.png" aria-label="Perbesar form koreksi data Operator">
+                  <img src="assets/operator-edit-reason.png" alt="Form edit produksi dengan nilai terbaru dan alasan perubahan wajib" loading="lazy">
+                  <span class="annotation-marker" style="--x:25%;--y:31%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:50%;--y:78%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:13%;--y:94%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Setiap koreksi harus punya alasan.</strong><span>Nilai sebelum–sesudah tersimpan untuk audit.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Perbaiki nilai yang keliru.</li><li><b>2</b> Jelaskan alasan koreksi.</li><li><b>3</b> Simpan sebelum data terkunci.</li></ol>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <section class="chapter" id="production-spv" data-role-section="production-spv" data-search-section>
+          <div class="chapter-head">
+            <span class="role-number">03</span>
+            <div>
+              <p class="section-kicker">Pemilik draft utama</p>
+              <h2>Production SPV</h2>
+              <p class="chapter-summary">Menjadi pihak utama yang memeriksa data produksi, membuat draft laporan, lalu mengajukan dan menandatanganinya agar proses berpindah ke Inspector.</p>
+              <div class="role-tags"><span class="role-tag yes">Edit sebelum terkunci</span><span class="role-tag yes">Ajukan laporan</span><span class="role-tag yes">Tanda tangan pertama</span></div>
+            </div>
+          </div>
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Antrean kerja</span></div>
+              <h3>Mulai dari Persetujuan, lalu buat draft laporan</h3>
+              <p class="step-copy">Buka <strong>Persetujuan</strong> dan pilih <strong>Buat laporan</strong>. Tentukan tanggal produksi, workcenter, dan shift yang benar; draft baru akan masuk ke alur persetujuan.</p>
+              <div class="shot-pair">
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/production-task-queue.png" aria-label="Perbesar halaman kerja Production SPV">
+                    <img src="assets/production-task-queue.png" alt="Halaman Persetujuan Production SPV dengan tombol Buat laporan" loading="lazy">
+                    <span class="annotation-marker" style="--x:91%;--y:20%" aria-hidden="true">1</span>
+                  </button>
+                  <figcaption><strong>Buka pembentukan draft.</strong><span>Tombol tersedia untuk Production.</span></figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/production-generate-report.png" aria-label="Perbesar pilihan lingkup laporan">
+                    <img src="assets/production-generate-report.png" alt="Form pemilihan tanggal, workcenter, dan shift untuk membuat draft laporan" loading="lazy">
+                    <span class="annotation-marker" style="--x:50%;--y:40%" aria-hidden="true">2</span>
+                    <span class="annotation-marker" style="--x:50%;--y:87%" aria-hidden="true">3</span>
+                  </button>
+                  <figcaption><strong>Pilih satu lingkup.</strong><span>Satu tanggal, workcenter, dan shift.</span></figcaption>
+                </figure>
+              </div>
+              <ol class="annotation-key paired-key" aria-label="Keterangan anotasi"><li><b>1</b> Klik Buat laporan.</li><li><b>2</b> Cocokkan tiga pilihan lingkup.</li><li><b>3</b> Bentuk draft untuk ditinjau.</li></ol>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Validasi</span></div>
+              <h3>Periksa dan koreksi data sebelum mengunci</h3>
+              <p class="step-copy">Cocokkan order, part, output, reject, slot waktu, catatan, dan foto. Production SPV dapat mengedit data selama belum ada tanda tangan Production.</p>
+              <ul class="checklist"><li>Jumlah output dan reject masuk akal.</li><li>Kode reject sesuai temuan.</li><li>Foto dapat dibuka dan memperlihatkan kondisi yang dicatat.</li></ul>
+              <figure class="shot detail">
+                <button class="shot-button" type="button" data-zoom="assets/production-entry-review.png" aria-label="Perbesar detail entry produksi">
+                  <img src="assets/production-entry-review.png" alt="Drawer detail produksi dengan tombol edit, data umum, bukti, reject, dan waktu pengiriman" loading="lazy">
+                  <span class="annotation-marker" style="--x:18%;--y:12%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:50%;--y:36%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:48%;--y:71%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Periksa satu entry secara menyeluruh.</strong><span>Tombol edit tersedia sebelum tanda tangan pertama.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Buka edit bila menemukan kesalahan.</li><li><b>2</b> Cocokkan identitas produksi.</li><li><b>3</b> Periksa reject dan waktu input.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Pengajuan</span></div>
+              <h3>Ajukan dan tandatangani dalam satu tindakan</h3>
+              <p class="step-copy">Buka tinjauan laporan, pilih <strong>Ajukan &amp; tandatangani</strong>, periksa ringkasan, centang persetujuan penggunaan tanda tangan tersimpan, lalu konfirmasi. Tindakan ini sekaligus mengunci data produksi.</p>
+              <div class="shot-pair">
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/production-review-before-sign.png" aria-label="Perbesar draft sebelum ditandatangani">
+                    <img src="assets/production-review-before-sign.png" alt="Draft laporan dengan tiga status tanda tangan dan tombol Ajukan dan tandatangani" loading="lazy">
+                    <span class="annotation-marker" style="--x:90%;--y:31%" aria-hidden="true">1</span>
+                    <span class="annotation-marker" style="--x:50%;--y:45%" aria-hidden="true">2</span>
+                  </button>
+                  <figcaption><strong>Review draft.</strong><span>Semua tahap masih kosong.</span></figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/production-sign-and-lock.png" aria-label="Perbesar dialog tanda tangan Production">
+                    <img src="assets/production-sign-and-lock.png" alt="Dialog Production untuk memeriksa ringkasan, memberi consent tanda tangan, dan mengunci data" loading="lazy">
+                    <span class="annotation-marker" style="--x:50%;--y:43%" aria-hidden="true">3</span>
+                    <span class="annotation-marker" style="--x:35%;--y:66%" aria-hidden="true">4</span>
+                    <span class="annotation-marker" style="--x:73%;--y:88%" aria-hidden="true">5</span>
+                  </button>
+                  <figcaption><strong>Konfirmasi tanda tangan.</strong><span>Data langsung terkunci.</span></figcaption>
+                </figure>
+              </div>
+              <ol class="annotation-key paired-key" aria-label="Keterangan anotasi"><li><b>1</b> Buka dialog pengajuan.</li><li><b>2</b> Periksa tiga tahap persetujuan.</li><li><b>3</b> Validasi ringkasan dan tanda tangan.</li><li><b>4</b> Beri persetujuan eksplisit.</li><li><b>5</b> Ajukan serta kunci data.</li></ol>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/production-data-locked.png" aria-label="Perbesar kondisi data yang telah terkunci">
+                  <img src="assets/production-data-locked.png" alt="Form edit produksi setelah tanda tangan Production dengan pemberitahuan data terkunci" loading="lazy">
+                  <span class="annotation-marker" style="--x:58%;--y:27%" aria-hidden="true">6</span>
+                </button>
+                <figcaption><strong>Hasil: data tidak lagi dapat ditimpa.</strong><span>Snapshot dan histori tetap tersedia.</span></figcaption>
+              </figure>
+              <div class="callout warning"><strong>Sesudah konfirmasi, data tidak bisa diedit.</strong> Laporan berpindah ke Inspector yang ditugaskan untuk workcenter tersebut.</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="chapter" id="production-head" data-role-section="production-head" data-search-section>
+          <div class="chapter-head">
+            <span class="role-number">04</span>
+            <div>
+              <p class="section-kicker">Pengganti terkontrol</p>
+              <h2>Production Dept Head</h2>
+              <p class="chapter-summary">Memiliki fungsi Production yang sama, tetapi Production SPV tetap diprioritaskan sebagai pemilik draft. Dept Head mengambil alih hanya saat kondisi kerja memerlukannya.</p>
+              <div class="role-tags"><span class="role-tag yes">Edit sebelum terkunci</span><span class="role-tag yes">Ajukan sebagai pengganti</span><span class="role-tag yes">Alasan wajib</span></div>
+            </div>
+          </div>
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Pantau</span></div>
+              <h3>Biarkan antrean utama tetap pada Production SPV</h3>
+              <p class="step-copy">Dept Head dapat memantau kelengkapan data dan membantu koreksi sebelum terkunci. Jika SPV tersedia, pengajuan tetap dilakukan oleh SPV.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/production-head-priority.png" aria-label="Perbesar antrean utama Production Dept Head">
+                  <img src="assets/production-head-priority.png" alt="Halaman Production Dept Head dengan antrean utama kosong dan satu tugas di Bantuan Head" loading="lazy">
+                  <span class="annotation-marker" style="--x:28%;--y:31%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:56%;--y:31%" aria-hidden="true">2</span>
+                </button>
+                <figcaption><strong>Antrean utama tetap memprioritaskan SPV.</strong><span>Backup terlihat terpisah di Bantuan Head.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Tugas utama Head tetap kosong.</li><li><b>2</b> Jumlah backup terlihat tanpa mengambil alih.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Ambil alih</span></div>
+              <h3>Gunakan Bantuan Head untuk kasus tertentu</h3>
+              <p class="step-copy">Saat SPV tidak tersedia atau ada kebutuhan operasional mendesak, buka draft terkait dan pilih jalur pengambilalihan. Isi alasan yang spesifik, misalnya pergantian shift atau SPV sedang tidak bertugas.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/production-head-backup.png" aria-label="Perbesar daftar Bantuan Head">
+                  <img src="assets/production-head-backup.png" alt="Tab Bantuan Head dengan satu draft Production yang dapat diambil alih" loading="lazy">
+                  <span class="annotation-marker" style="--x:54%;--y:30%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:39%;--y:53%" aria-hidden="true">2</span>
+                </button>
+                <figcaption><strong>Ambil hanya draft yang memang perlu dibantu.</strong><span>Status draft dan lingkupnya terlihat sebelum dibuka.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Aktifkan tab Bantuan Head.</li><li><b>2</b> Buka draft yang sesuai.</li></ol>
+              </figure>
+              <div class="callout"><strong>Pengambilalihan tidak menambah tahap baru.</strong> Tanda tangan Dept Head menggantikan tanda tangan Production pada tahap pertama, kemudian laporan tetap menuju Inspector.</div>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Konfirmasi</span></div>
+              <h3>Periksa, ajukan, dan tandatangani</h3>
+              <p class="step-copy">Lakukan pemeriksaan yang sama seperti Production SPV. Setelah yakin, konfirmasi tanda tangan. Nama penanda tangan dan alasan pengambilalihan tersimpan pada jejak keputusan.</p>
+              <figure class="shot detail">
+                <button class="shot-button" type="button" data-zoom="assets/production-head-takeover.png" aria-label="Perbesar dialog pengambilalihan Production Dept Head">
+                  <img src="assets/production-head-takeover.png" alt="Dialog tanda tangan Production Dept Head dengan alasan pengambilalihan dari SPV yang wajib" loading="lazy">
+                  <span class="annotation-marker" style="--x:50%;--y:42%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:50%;--y:71%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:72%;--y:90%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Alasan pengambilalihan wajib diisi.</strong><span>Tanda tangan Head menjadi tahap Production.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Periksa tanda tangan tersimpan.</li><li><b>2</b> Jelaskan alasan menggantikan SPV.</li><li><b>3</b> Ajukan setelah semua data benar.</li></ol>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <section class="chapter" id="inspector" data-role-section="inspector" data-search-section>
+          <div class="chapter-head">
+            <span class="role-number">05</span>
+            <div>
+              <p class="section-kicker">Pemeriksaan workcenter</p>
+              <h2>Inspector</h2>
+              <p class="chapter-summary">Menerima tugas hanya dari workcenter yang ditetapkan Admin, memeriksa data dan bukti, lalu menyetujui atau menolak dengan alasan yang jelas.</p>
+              <div class="role-tags"><span class="role-tag yes">Tersegmentasi per workcenter</span><span class="role-tag yes">Edit sebelum Production sign</span><span class="role-tag yes">Keputusan tahap 2</span></div>
+            </div>
+          </div>
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Tugas masuk</span></div>
+              <h3>Mulai dari bel atau Perlu persetujuan saya</h3>
+              <p class="step-copy">Angka pada bel menunjukkan pekerjaan yang perlu ditindaklanjuti. Daftar hanya menampilkan laporan yang sesuai dengan penugasan workcenter Anda.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/inspector-task-notification.png" aria-label="Perbesar antrean notifikasi Inspector">
+                  <img src="assets/inspector-task-notification.png" alt="Tampilan Inspector dengan bel terbuka dan satu laporan sesuai workcenter yang perlu disetujui" loading="lazy">
+                  <span class="annotation-marker" style="--x:85%;--y:5%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:74%;--y:19%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:40%;--y:45%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Gunakan antrean pribadi sebagai titik mulai.</strong><span>Email juga dikirim untuk tugas persetujuan yang baru.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Bel menunjukkan jumlah tugas.</li><li><b>2</b> Klik notifikasi untuk membuka laporan.</li><li><b>3</b> Status memperlihatkan tahap aktif.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Pemeriksaan</span></div>
+              <h3>Cocokkan detail laporan dan foto bukti</h3>
+              <p class="step-copy">Periksa Operator, part, slot, output, reject, ketepatan waktu, catatan, dan gambar bukti. Sebelum Production menandatangani, Inspector dapat mengoreksi data di menu Data produksi. Sesudahnya, lakukan keputusan dari halaman tinjauan.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/inspector-report-review.png" aria-label="Perbesar halaman pemeriksaan Inspector">
+                  <img src="assets/inspector-report-review.png" alt="Halaman tinjauan Inspector dengan status Production, foto bukti, waktu input, dan tombol keputusan" loading="lazy">
+                  <span class="annotation-marker" style="--x:85%;--y:31%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:59%;--y:47%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:77%;--y:63%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Fokus pada bukti dan kesesuaian workcenter.</strong><span>Status tiga tahap terlihat di bagian atas laporan.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Tombol keputusan hanya muncul pada giliran Anda.</li><li><b>2</b> Buka dan periksa foto bukti.</li><li><b>3</b> Cocokkan waktu serta catatan.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Keputusan</span></div>
+              <h3>Setujui jika sesuai; tolak dengan alasan bila perlu</h3>
+              <p class="step-copy">Persetujuan meneruskan laporan ke QC. Jika menolak, tulis alasan yang dapat ditindaklanjuti—sebutkan data atau bukti mana yang harus diperbaiki. Semua keputusan masuk ke jejak audit.</p>
+              <div class="shot-pair">
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/inspector-approve-dialog.png" aria-label="Perbesar dialog persetujuan Inspector">
+                    <img src="assets/inspector-approve-dialog.png" alt="Dialog konfirmasi persetujuan Inspector dengan tanda tangan dan consent" loading="lazy">
+                    <span class="annotation-marker" style="--x:50%;--y:50%" aria-hidden="true">1</span>
+                    <span class="annotation-marker" style="--x:34%;--y:68%" aria-hidden="true">2</span>
+                  </button>
+                  <figcaption><strong>Jika sesuai: setujui.</strong><span>Pastikan revisi dan tanda tangan benar.</span></figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/inspector-reject-dialog.png" aria-label="Perbesar dialog penolakan Inspector">
+                    <img src="assets/inspector-reject-dialog.png" alt="Dialog penolakan Inspector dengan alasan penolakan wajib" loading="lazy">
+                    <span class="annotation-marker" style="--x:50%;--y:46%" aria-hidden="true">3</span>
+                    <span class="annotation-marker" style="--x:72%;--y:66%" aria-hidden="true">4</span>
+                  </button>
+                  <figcaption><strong>Jika tidak sesuai: tolak.</strong><span>Alasan harus bisa ditindaklanjuti.</span></figcaption>
+                </figure>
+              </div>
+              <ol class="annotation-key paired-key" aria-label="Keterangan anotasi"><li><b>1</b> Cocokkan tanda tangan tersimpan.</li><li><b>2</b> Beri consent untuk revisi ini.</li><li><b>3</b> Tulis bagian yang harus diperbaiki.</li><li><b>4</b> Konfirmasi penolakan.</li></ol>
+            </article>
+          </div>
+        </section>
+
+        <section class="chapter" id="qc-spv" data-role-section="qc-spv" data-search-section>
+          <div class="chapter-head">
+            <span class="role-number">06</span>
+            <div>
+              <p class="section-kicker">Keputusan akhir kualitas</p>
+              <h2>QC SPV</h2>
+              <p class="chapter-summary">Melakukan pemeriksaan akhir setelah Production dan Inspector menyetujui. Satu keputusan QC menyelesaikan laporan.</p>
+              <div class="role-tags"><span class="role-tag yes">Edit sebelum Production sign</span><span class="role-tag yes">Keputusan akhir</span><span class="role-tag yes">Dapat menolak</span></div>
+            </div>
+          </div>
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Antrean QC</span></div>
+              <h3>Buka laporan yang menunggu keputusan akhir</h3>
+              <p class="step-copy">Gunakan bel atau bagian <strong>Perlu persetujuan saya</strong>. Pastikan tanda tangan Production dan Inspector sudah tercatat sebelum melanjutkan.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/qc-spv-task-queue.png" aria-label="Perbesar antrean QC SPV">
+                  <img src="assets/qc-spv-task-queue.png" alt="Antrean QC SPV dengan satu laporan yang sudah ditandatangani Production dan Inspector" loading="lazy">
+                  <span class="annotation-marker" style="--x:31%;--y:31%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:34%;--y:47%" aria-hidden="true">2</span>
+                </button>
+                <figcaption><strong>Ambil hanya laporan yang masuk giliran QC.</strong><span>Dua tahap pertama sudah berwarna hijau.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Angka menunjukkan tugas terbuka.</li><li><b>2</b> Pastikan Production dan Inspector selesai.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Tinjauan akhir</span></div>
+              <h3>Periksa konsistensi data, bukti, dan keputusan sebelumnya</h3>
+              <p class="step-copy">Baca ringkasan report, temuan reject, catatan, bukti foto, dan jejak keputusan. Jika sesuai, beri persetujuan akhir menggunakan tanda tangan tersimpan.</p>
+              <div class="shot-pair">
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/qc-spv-review.png" aria-label="Perbesar tinjauan akhir QC SPV">
+                    <img src="assets/qc-spv-review.png" alt="Halaman QC SPV dengan status Production dan Inspector yang sudah disetujui" loading="lazy">
+                    <span class="annotation-marker" style="--x:58%;--y:45%" aria-hidden="true">1</span>
+                    <span class="annotation-marker" style="--x:85%;--y:31%" aria-hidden="true">2</span>
+                  </button>
+                  <figcaption><strong>Periksa rangkaian sebelumnya.</strong><span>Dua tanda tangan sudah tercatat.</span></figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/qc-spv-approval-dialog.png" aria-label="Perbesar dialog persetujuan akhir QC">
+                    <img src="assets/qc-spv-approval-dialog.png" alt="Dialog konfirmasi tahap QC dengan ringkasan revisi dan tanda tangan tersimpan" loading="lazy">
+                    <span class="annotation-marker" style="--x:50%;--y:49%" aria-hidden="true">3</span>
+                    <span class="annotation-marker" style="--x:34%;--y:68%" aria-hidden="true">4</span>
+                  </button>
+                  <figcaption><strong>Konfirmasi tahap QC.</strong><span>Consent berlaku untuk revisi ini.</span></figcaption>
+                </figure>
+              </div>
+              <ol class="annotation-key paired-key" aria-label="Keterangan anotasi"><li><b>1</b> Pastikan dua tahap awal lengkap.</li><li><b>2</b> Buka keputusan akhir.</li><li><b>3</b> Cocokkan tanda tangan QC.</li><li><b>4</b> Beri consent sebelum menyetujui.</li></ol>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Hasil</span></div>
+              <h3>Pastikan status berubah menjadi final</h3>
+              <p class="step-copy">Setelah disetujui, laporan siap dicetak dan tidak lagi muncul sebagai tugas terbuka. Jika ditolak, alasan harus spesifik agar tim mengetahui koreksi yang dibutuhkan.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/qc-final-status.png" aria-label="Perbesar status laporan final">
+                  <img src="assets/qc-final-status.png" alt="Tinjauan final dengan status disetujui dan tiga identitas penanda tangan" loading="lazy">
+                  <span class="annotation-marker" style="--x:24%;--y:31%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:60%;--y:45%" aria-hidden="true">2</span>
+                </button>
+                <figcaption><strong>Hasil akhir harus berstatus Disetujui.</strong><span>Production, Inspector, dan satu pihak QC tercatat.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Cocokkan status final.</li><li><b>2</b> Pastikan tiga tahap mempunyai nama dan waktu.</li></ol>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <section class="chapter" id="qc-head" data-role-section="qc-head" data-search-section>
+          <div class="chapter-head">
+            <span class="role-number">07</span>
+            <div>
+              <p class="section-kicker">Otoritas akhir alternatif</p>
+              <h2>QC Dept Head</h2>
+              <p class="chapter-summary">Memiliki wewenang persetujuan akhir yang sama dengan QC SPV. Sistem hanya memerlukan salah satu dari keduanya, bukan dua tanda tangan QC.</p>
+              <div class="role-tags"><span class="role-tag yes">Edit sebelum Production sign</span><span class="role-tag yes">Keputusan akhir</span><span class="role-tag no">Bukan tahap tambahan</span></div>
+            </div>
+          </div>
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Prioritas</span></div>
+              <h3>Ambil tugas QC yang memang perlu ditangani</h3>
+              <p class="step-copy">Buka notifikasi persetujuan dan cek apakah laporan belum diputus oleh QC SPV. Hindari keputusan ganda pada laporan yang sama.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/qc-head-task-queue.png" aria-label="Perbesar antrean QC Dept Head">
+                  <img src="assets/qc-head-task-queue.png" alt="Antrean QC Dept Head yang menampilkan laporan pada tahap QC" loading="lazy">
+                  <span class="annotation-marker" style="--x:32%;--y:31%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:34%;--y:47%" aria-hidden="true">2</span>
+                </button>
+                <figcaption><strong>QC Dept Head melihat antrean QC yang sama.</strong><span>Buka hanya laporan yang belum diputus.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Periksa jumlah tugas aktif.</li><li><b>2</b> Pastikan tahap QC masih terbuka.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Keputusan</span></div>
+              <h3>Lakukan pemeriksaan akhir yang sama</h3>
+              <p class="step-copy">Periksa data produksi, bukti, status Production, status Inspector, dan jejak keputusan. Setujui untuk memfinalkan atau tolak dengan alasan yang operasional dan mudah ditindaklanjuti.</p>
+              <figure class="shot detail">
+                <button class="shot-button" type="button" data-zoom="assets/qc-head-decision.png" aria-label="Perbesar keputusan QC Dept Head">
+                  <img src="assets/qc-head-decision.png" alt="Dialog konfirmasi QC Dept Head pada tahap QC" loading="lazy">
+                  <span class="annotation-marker" style="--x:50%;--y:49%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:34%;--y:68%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:72%;--y:88%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Wewenang akhirnya setara dengan QC SPV.</strong><span>Satu tanda tangan QC sudah cukup.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Cocokkan tanda tangan tersimpan.</li><li><b>2</b> Beri consent untuk revisi ini.</li><li><b>3</b> Konfirmasi keputusan akhir.</li></ol>
+              </figure>
+              <div class="callout"><strong>Satu dari dua peran QC.</strong> Ketika QC Dept Head sudah menyetujui, QC SPV tidak perlu menandatangani ulang—dan sebaliknya.</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="chapter" id="viewer" data-role-section="viewer" data-search-section>
+          <div class="chapter-head">
+            <span class="role-number">08</span>
+            <div>
+              <p class="section-kicker">Akses baca</p>
+              <h2>Viewer</h2>
+              <p class="chapter-summary">Melihat ringkasan, laporan, status persetujuan, dan jejak keputusan tanpa mengubah data atau memberikan tanda tangan.</p>
+              <div class="role-tags"><span class="role-tag yes">Baca laporan</span><span class="role-tag yes">Cetak</span><span class="role-tag no">Tidak dapat mengedit</span></div>
+            </div>
+          </div>
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Temukan laporan</span></div>
+              <h3>Gunakan filter untuk mempersempit hasil</h3>
+              <p class="step-copy">Cari berdasarkan workcenter, tanggal, shift, part, operator, atau status. Buka baris yang diperlukan untuk melihat detail dan tahapan persetujuannya.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/viewer-report-filters.png" aria-label="Perbesar daftar dan filter laporan Viewer">
+                  <img src="assets/viewer-report-filters.png" alt="Halaman Laporan Viewer dengan filter tanggal, workcenter, shift, dan daftar status laporan" loading="lazy">
+                  <span class="annotation-marker" style="--x:57%;--y:33%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:87%;--y:46%" aria-hidden="true">2</span>
+                </button>
+                <figcaption><strong>Mulai dari daftar laporan.</strong><span>Viewer hanya membaca, tidak mengubah status.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Persempit tanggal, workcenter, dan shift.</li><li><b>2</b> Buka tinjauan laporan yang dipilih.</li></ol>
+              </figure>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Cetak</span></div>
+              <h3>Buka pratinjau report yang sudah final</h3>
+              <p class="step-copy">Periksa report ID, revisi, total output/reject, reject rate, serta tiga tahap tanda tangan. Gunakan pratinjau cetak untuk menyimpan PDF atau mencetak dokumen.</p>
+              <div class="shot-pair">
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/viewer-final-report.png" aria-label="Perbesar bagian atas pratinjau report">
+                    <img src="assets/viewer-final-report.png" alt="Pratinjau laporan Viewer dengan tombol Cetak final, report ID, dan ringkasan produksi" loading="lazy">
+                    <span class="annotation-marker" style="--x:25%;--y:34%" aria-hidden="true">1</span>
+                    <span class="annotation-marker" style="--x:80%;--y:53%" aria-hidden="true">2</span>
+                  </button>
+                  <figcaption><strong>Periksa bagian atas report.</strong><span>ID, revisi, status, dan ringkasan.</span></figcaption>
+                </figure>
+                <figure class="shot">
+                  <button class="shot-button" type="button" data-zoom="assets/report-final.png" aria-label="Perbesar bagian tanda tangan report final">
+                    <img src="assets/report-final.png" alt="Bagian bawah laporan final dengan ringkasan reject dan tiga tanda tangan" loading="lazy">
+                    <span class="annotation-marker" style="--x:67%;--y:72%" aria-hidden="true">3</span>
+                    <span class="annotation-marker" style="--x:72%;--y:84%" aria-hidden="true">4</span>
+                  </button>
+                  <figcaption><strong>Periksa bagian bawah report.</strong><span>Tiga tahap tanda tangan dan metadata.</span></figcaption>
+                </figure>
+              </div>
+              <ol class="annotation-key paired-key" aria-label="Keterangan anotasi"><li><b>1</b> Gunakan Cetak final.</li><li><b>2</b> Baca ringkasan output dan reject.</li><li><b>3</b> Pastikan tiga tahap tanda tangan.</li><li><b>4</b> Cocokkan report ID dan revisi.</li></ol>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Ketertelusuran</span></div>
+              <h3>Buka tinjauan untuk membaca jejak persetujuan</h3>
+              <p class="step-copy">Dari kolom <strong>Tinjauan</strong>, buka laporan untuk melihat status, nama, dan waktu pada tiga tahap persetujuan. Viewer tidak mempunyai menu Jejak keputusan dan tidak dapat memberi tanda tangan.</p>
+              <figure class="shot">
+                <button class="shot-button" type="button" data-zoom="assets/viewer-approval-timeline.png" aria-label="Perbesar tinjauan persetujuan Viewer">
+                  <img src="assets/viewer-approval-timeline.png" alt="Tinjauan Viewer dengan status final serta nama dan waktu tiga penanda tangan" loading="lazy">
+                  <span class="annotation-marker" style="--x:24%;--y:31%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:59%;--y:45%" aria-hidden="true">2</span>
+                </button>
+                <figcaption><strong>Viewer dapat memverifikasi alur tanpa mengubah data.</strong><span>Detail audit penuh tetap tersedia untuk Admin dan reviewer.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Pastikan status Disetujui.</li><li><b>2</b> Cocokkan nama serta waktu tiap tahap.</li></ol>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <section class="shared-section" id="hak-akses" data-search-section>
+          <p class="section-kicker">Aturan bersama</p>
+          <h2>Siapa boleh mengubah data?</h2>
+          <p class="lead">Batas utamanya sederhana: sebelum tanda tangan Production pertama, pihak yang berwenang masih dapat mengoreksi. Sesudah itu, data sumber terkunci untuk semua peran.</p>
+          <div class="matrix-wrap">
+            <table class="matrix">
+              <thead><tr><th>Peran</th><th>Input data</th><th>Edit sebelum Production sign</th><th>Ajukan / tanda tangan</th><th>Sesudah terkunci</th></tr></thead>
+              <tbody>
+                <tr><td>Operator</td><td class="yes-text">Ya, data sendiri</td><td class="yes-text">Ya, data sendiri</td><td class="no-text">Tidak</td><td class="no-text">Baca status</td></tr>
+                <tr><td>Production SPV</td><td class="no-text">Tidak</td><td class="yes-text">Ya</td><td class="yes-text">Tahap Production utama</td><td class="no-text">Baca / tindak lanjut revisi</td></tr>
+                <tr><td>Production Dept Head</td><td class="no-text">Tidak</td><td class="yes-text">Ya</td><td class="yes-text">Pengganti, alasan wajib</td><td class="no-text">Baca / tindak lanjut revisi</td></tr>
+                <tr><td>Inspector</td><td class="no-text">Tidak</td><td class="yes-text">Ya, workcenter tugas</td><td class="yes-text">Tahap Inspector</td><td class="no-text">Putuskan, tanpa edit data</td></tr>
+                <tr><td>QC SPV</td><td class="no-text">Tidak</td><td class="yes-text">Ya</td><td class="yes-text">Tahap QC akhir</td><td class="no-text">Putuskan, tanpa edit data</td></tr>
+                <tr><td>QC Dept Head</td><td class="no-text">Tidak</td><td class="yes-text">Ya</td><td class="yes-text">Tahap QC akhir</td><td class="no-text">Putuskan, tanpa edit data</td></tr>
+                <tr><td>Admin</td><td class="no-text">Tidak</td><td class="no-text">Tidak</td><td class="no-text">Tidak</td><td class="no-text">Kelola akses saja</td></tr>
+                <tr><td>Viewer</td><td class="no-text">Tidak</td><td class="no-text">Tidak</td><td class="no-text">Tidak</td><td class="no-text">Baca saja</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="shared-proof" data-search-item>
+            <h3>Admin dan reviewer dapat menelusuri perubahan rinci</h3>
+            <p>Gunakan filter tanggal, pengguna, tindakan, workcenter, report ID, atau revisi. Buka <strong>Lihat perubahan</strong> untuk membandingkan nilai sebelum–sesudah beserta alasan koreksi.</p>
+            <figure class="shot">
+              <button class="shot-button" type="button" data-zoom="assets/reviewer-audit-filters.png" aria-label="Perbesar filter dan detail Jejak keputusan">
+                <img src="assets/reviewer-audit-filters.png" alt="Halaman Jejak keputusan reviewer dengan filter tindakan dan detail perubahan produksi" loading="lazy">
+                <span class="annotation-marker" style="--x:58%;--y:38%" aria-hidden="true">1</span>
+                <span class="annotation-marker" style="--x:70%;--y:70%" aria-hidden="true">2</span>
+              </button>
+              <figcaption><strong>Jejak perubahan bersifat auditable.</strong><span>Viewer tidak mempunyai akses ke halaman ini.</span></figcaption>
+              <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Persempit aktivitas dengan filter.</li><li><b>2</b> Buka nilai sebelum–sesudah dan alasannya.</li></ol>
+            </figure>
+          </div>
+        </section>
+
+        <section class="shared-section" id="email" data-search-section>
+          <p class="section-kicker">Komunikasi otomatis</p>
+          <h2>Email &amp; notifikasi</h2>
+          <p class="lead">Email membantu pengguna menemukan tugas, sementara bel di aplikasi tetap menjadi sumber antrean kerja. Tombol email selalu mengarah ke aplikasi; keputusan tetap dilakukan setelah pengguna masuk dengan akun pribadinya.</p>
+
+          <div class="steps">
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">1</span><span>Email undangan</span></div>
+              <h3>Untuk Admin mengundang akun pemeriksa</h3>
+              <p class="step-copy">Email ini digunakan untuk Production, Inspector, QC, dan peran pemeriksa lain. Operator menerima link salin langsung, bukan email otomatis.</p>
+              <div class="email-preview" aria-label="Contoh email undangan akun">
+                <div class="email-toolbar"><span class="email-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Contoh tampilan email</span></div>
+                <div class="email-body">
+                  <div class="email-meta"><span>Dari</span><strong>Sansico Quality Workspace &lt;noreply@perusahaan.co.id&gt;</strong><span>Subjek</span><strong>Undangan akun Sansico Quality Workspace</strong></div>
+                  <div class="email-content">
+                    <h4>Siapkan akun Anda.</h4>
+                    <p>Halo Rina,</p>
+                    <p>Admin mengundang Anda sebagai <strong>Inspector</strong> dengan username <strong>rina.inspector</strong>. Tautan aktivasi berlaku 24 jam dan hanya dapat digunakan satu kali.</p>
+                    <a class="email-button" href="#email" tabindex="-1">Aktifkan akun</a>
+                    <p>Setelah aktivasi, masuk dengan akun pribadi dan buat tanda tangan tersimpan sebelum melakukan persetujuan.</p>
+                    <p class="email-safety">Jangan teruskan tautan atau kata sandi. Jika identitas pada undangan tidak sesuai, hubungi Admin.</p>
+                  </div>
+                </div>
+              </div>
+              <p class="email-caption">Alamat dan identitas di atas hanya contoh. Nama pengirim ditentukan melalui konfigurasi SMTP sistem.</p>
+            </article>
+
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">2</span><span>Email Production</span></div>
+              <h3>Draft perlu diajukan oleh Production SPV</h3>
+              <div class="email-preview" aria-label="Contoh email tugas Production">
+                <div class="email-toolbar"><span class="email-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Contoh tampilan email</span></div>
+                <div class="email-body">
+                  <div class="email-meta"><span>Dari</span><strong>Sansico Quality Workspace</strong><span>Subjek</span><strong>Draft perlu diajukan oleh Production SPV: LITONG · Rev 00</strong></div>
+                  <div class="email-content">
+                    <h4>Draft menunggu Production.</h4>
+                    <p>Halo Dimas,</p>
+                    <p>Laporan untuk <strong>LITONG</strong>, tanggal produksi <strong>08 September 2026</strong>, <strong>Shift 1</strong>, sudah siap ditinjau dan diajukan.</p>
+                    <a class="email-button" href="#email" tabindex="-1">Buka laporan</a>
+                    <p class="email-safety">Masuk dengan akun pribadi. Abaikan email bila tugas sudah diputus oleh pengguna berwenang lain.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Email Inspector</span></div>
+              <h3>Laporan siap diperiksa sesuai penugasan workcenter</h3>
+              <div class="email-preview" aria-label="Contoh email tugas Inspector">
+                <div class="email-toolbar"><span class="email-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Contoh tampilan email</span></div>
+                <div class="email-body">
+                  <div class="email-meta"><span>Dari</span><strong>Sansico Quality Workspace</strong><span>Subjek</span><strong>Perlu persetujuan: LITONG · Rev 00</strong></div>
+                  <div class="email-content">
+                    <h4>Production sudah mengajukan.</h4>
+                    <p>Halo Rina,</p>
+                    <p>Laporan <strong>LITONG · Shift 1</strong> sudah ditandatangani Production dan menunggu pemeriksaan Anda.</p>
+                    <a class="email-button" href="#email" tabindex="-1">Tinjau bukti</a>
+                    <p class="email-safety">Tugas ini diberikan berdasarkan workcenter Anda. Lakukan keputusan di aplikasi agar tercatat pada jejak audit.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">4</span><span>Email QC</span></div>
+              <h3>Laporan menunggu persetujuan akhir</h3>
+              <div class="email-preview" aria-label="Contoh email tugas QC">
+                <div class="email-toolbar"><span class="email-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Contoh tampilan email</span></div>
+                <div class="email-body">
+                  <div class="email-meta"><span>Dari</span><strong>Sansico Quality Workspace</strong><span>Subjek</span><strong>Perlu persetujuan: LITONG · Rev 00</strong></div>
+                  <div class="email-content">
+                    <h4>Menunggu keputusan akhir QC.</h4>
+                    <p>Halo Maya,</p>
+                    <p>Production dan Inspector telah menyetujui laporan <strong>LITONG · Shift 1</strong>. Silakan lakukan pemeriksaan akhir.</p>
+                    <a class="email-button" href="#email" tabindex="-1">Buka persetujuan</a>
+                    <p class="email-safety">Satu persetujuan dari QC SPV atau QC Dept Head menyelesaikan laporan.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="shared-section" id="faq" data-search-section>
+          <p class="section-kicker">Jawaban cepat</p>
+          <h2>Pertanyaan umum</h2>
+          <div class="faq">
+            <details data-search-item><summary>Operator lupa PIN—apa yang dilakukan?</summary><p>Hubungi Admin. Admin memverifikasi identitas, mereset PIN, dan bila perlu mencabut sesi lama. Operator lalu masuk menggunakan PIN baru.</p></details>
+            <details data-search-item><summary>Mengapa data produksi tidak bisa diedit?</summary><p>Kemungkinan sudah ada tanda tangan Production. Data otomatis terkunci setelah tanda tangan pertama agar isi laporan yang disetujui tidak berubah diam-diam.</p></details>
+            <details data-search-item><summary>Inspector tidak melihat laporan tertentu?</summary><p>Periksa apakah report sudah ditandatangani Production dan apakah workcenter tersebut masuk ke penugasan Inspector. Jika tidak sesuai, minta Admin memperbaiki penugasan.</p></details>
+            <details data-search-item><summary>Apakah QC SPV dan QC Dept Head harus sama-sama menyetujui?</summary><p>Tidak. Salah satu persetujuan QC sudah menyelesaikan tahap akhir.</p></details>
+            <details data-search-item><summary>Kapan Production Dept Head boleh mengajukan?</summary><p>Ketika Production SPV tidak tersedia atau ada kondisi operasional yang membutuhkan pengambilalihan. Alasan wajib dicatat di aplikasi.</p></details>
+            <details data-search-item><summary>Foto dari kamera tidak terbuka di HP?</summary><p>Pastikan izin kamera untuk browser aktif. Jika tetap tidak terbuka, ambil foto lewat aplikasi Kamera lalu pilih file tersebut dari galeri.</p></details>
+            <details data-search-item><summary>Email tugas tidak diterima?</summary><p>Cek folder spam, pastikan alamat email pada akun benar, lalu gunakan bel di aplikasi untuk melihat antrean. Hubungi Admin bila email tetap tidak masuk.</p></details>
+            <details data-search-item><summary>Bagaimana melihat riwayat penolakan?</summary><p>Admin atau reviewer membuka Jejak keputusan lalu memfilter report ID, workcenter, tahap, atau keputusan. Viewer memeriksa status dan penanda tangan dari halaman Tinjauan laporan.</p></details>
+          </div>
+        </section>
+
+        <div class="empty-state" id="empty-state">
+          <strong>Tidak ada langkah yang cocok.</strong>
+          <p>Coba kata yang lebih singkat atau hapus filter peran untuk mencari di seluruh panduan.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="closing">
+    <div class="closing-inner">
+      <div>
+        <p class="section-kicker">Siap mulai</p>
+        <h2>Kerjakan tugas dari antrean Anda.</h2>
+        <p>Mulai dari bel atau menu Perlu persetujuan saya; kembali ke panduan ini bila menemui status yang belum dikenal.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner"><span>Sansico Quality Workspace · Panduan penggunaan internal</span><span>Data dan identitas pada gambar adalah contoh non-operasional.</span></div>
+  </footer>
+
+  <dialog class="image-dialog" id="image-dialog" aria-label="Pratinjau gambar">
+    <button class="dialog-close" type="button" data-close-dialog>Tutup ×</button>
+    <div class="dialog-stage" id="dialog-stage">
+      <img class="dialog-image" id="dialog-image" alt="">
+    </div>
+  </dialog>
+</body>
+</html>
