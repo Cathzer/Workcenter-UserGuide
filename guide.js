@@ -17,6 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let activeRole = 'all';
 
+  const prepareAnnotations = () => {
+    document.querySelectorAll('.shot-button').forEach((button) => {
+      const sourceImage = button.querySelector(':scope > img');
+      const markers = [...button.querySelectorAll(':scope > .annotation-marker')];
+      if (!sourceImage || !markers.length) return;
+
+      const stage = document.createElement('span');
+      stage.className = 'annotation-stage';
+      button.insertBefore(stage, sourceImage);
+      stage.append(sourceImage, ...markers);
+    });
+
+    document.querySelectorAll('.annotation-marker').forEach((marker) => {
+      if (marker.dataset.placement) return;
+      const x = Number.parseFloat(marker.style.getPropertyValue('--x'));
+      const y = Number.parseFloat(marker.style.getPropertyValue('--y'));
+
+      if (y <= 13) marker.dataset.placement = 'below';
+      else if (x <= 18) marker.dataset.placement = 'right';
+      else if (x >= 84) marker.dataset.placement = 'left';
+      else marker.dataset.placement = 'above';
+    });
+  };
+
+  prepareAnnotations();
+
   const normalize = (value) =>
     (value || '')
       .toLocaleLowerCase('id-ID')
