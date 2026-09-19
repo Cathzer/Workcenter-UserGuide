@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Panduan penggunaan Sansico Quality Workspace untuk Admin, Operator, Leader, Production, QC Inspector, QC, dan Viewer.">
   <title>Panduan Penggunaan · Sansico Quality Workspace</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238c0b22'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='38' font-family='serif' fill='white'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <script src="guide.js" defer></script>
 </head>
@@ -25,8 +26,8 @@
           <option value="ringkasan">Ringkasan</option>
           <option value="admin">Admin</option>
           <option value="operator">Operator</option>
-          <option value="production-spv">Production SPV</option>
           <option value="leader">Leader</option>
+          <option value="production-spv">Production SPV</option>
           <option value="production-head">Production Dept Head</option>
           <option value="inspector">QC Inspector</option>
           <option value="qc-spv">QC SPV</option>
@@ -58,8 +59,8 @@
             <button class="role-chip" type="button" data-role-filter="all" aria-pressed="true">Semua alur</button>
             <button class="role-chip" type="button" data-role-filter="admin" aria-pressed="false">Admin</button>
             <button class="role-chip" type="button" data-role-filter="operator" aria-pressed="false">Operator</button>
-            <button class="role-chip" type="button" data-role-filter="production-spv" aria-pressed="false">Production SPV</button>
             <button class="role-chip" type="button" data-role-filter="leader" aria-pressed="false">Leader</button>
+            <button class="role-chip" type="button" data-role-filter="production-spv" aria-pressed="false">Production SPV</button>
             <button class="role-chip" type="button" data-role-filter="production-head" aria-pressed="false">Production Dept Head</button>
             <button class="role-chip" type="button" data-role-filter="inspector" aria-pressed="false">QC Inspector</button>
             <button class="role-chip" type="button" data-role-filter="qc-spv" aria-pressed="false">QC SPV</button>
@@ -80,7 +81,7 @@
             </div>
             <div class="pipeline-stage">
               <span class="pipeline-index">03</span>
-              <div><strong>Production menandatangani</strong><span>Production SPV atau Leader sesuai lingkup workcenter.</span></div>
+              <div><strong>Leader mengangkat draft</strong><span>Leader area meninjau dan menandatangani; Production SPV menjadi backup.</span></div>
             </div>
             <div class="pipeline-stage">
               <span class="pipeline-index">04</span>
@@ -112,8 +113,8 @@
           <button type="button" data-target="ringkasan" class="active">Ringkasan alur</button>
           <button type="button" data-target="admin" data-role-nav="admin">Admin</button>
           <button type="button" data-target="operator" data-role-nav="operator">Operator</button>
-          <button type="button" data-target="production-spv" data-role-nav="production-spv">Production SPV</button>
           <button type="button" data-target="leader" data-role-nav="leader">Leader</button>
+          <button type="button" data-target="production-spv" data-role-nav="production-spv">Production SPV</button>
           <button type="button" data-target="production-head" data-role-nav="production-head">Production Dept Head</button>
           <button type="button" data-target="inspector" data-role-nav="inspector">QC Inspector</button>
           <button type="button" data-target="qc-spv" data-role-nav="qc-spv">QC SPV</button>
@@ -144,12 +145,12 @@
               <div class="flow-node"><small>Persiapan</small><strong>Admin menata akses</strong><p>Role, workcenter, penugasan QC Inspector/Leader, dan undangan.</p></div>
               <div class="flow-node"><small>Pencatatan</small><strong>Operator mengirim data</strong><p>Output, reject, waktu, catatan, dan bukti foto.</p></div>
               <div class="flow-node"><small>Otomatis</small><strong>Draft laporan diperbarui</strong><p>Draft dibuat atau disegarkan selama belum ditandatangani.</p></div>
-              <div class="flow-node"><small>Tahap 1</small><strong>Production SPV / Leader</strong><p>Meninjau, menandatangani, lalu mengunci data.</p></div>
+              <div class="flow-node"><small>Tahap 1</small><strong>Leader area mengangkat draft</strong><p>Leader meninjau dan menandatangani. Production SPV mengambil alih bila diperlukan.</p></div>
               <div class="flow-node"><small>Tahap 2</small><strong>QC Inspector memeriksa</strong><p>Memastikan data dan bukti sesuai workcenter tugas.</p></div>
               <div class="flow-node"><small>Tahap 3</small><strong>QC menyetujui akhir</strong><p>QC SPV atau QC Dept Head membuat laporan final.</p></div>
             </div>
           </div>
-          <p class="flow-exception"><strong>Jika ditolak:</strong> alasan tersimpan di Jejak keputusan. Production SPV atau Leader menindaklanjuti dan membuat revisi baru untuk diperiksa kembali. Production Dept Head memantau dan mengeskalasi—bukan menandatangani tahap Production pada alur baru.</p>
+          <p class="flow-exception"><strong>Jika ditolak:</strong> alasan tersimpan di Jejak keputusan. Leader area menindaklanjuti dan membuat revisi baru; Production SPV menjadi backup bila Leader tidak dapat menangani. Production Dept Head memantau dan mengeskalasi—bukan menandatangani tahap Production pada alur baru.</p>
         </section>
 
         <section class="chapter" id="admin" data-role-section="admin" data-search-section>
@@ -167,7 +168,7 @@
               <div class="step-label"><span class="index">1</span><span>Persiapan</span></div>
               <h3>Masuk ke Pengguna &amp; akses</h3>
               <p class="step-copy">Buka menu <strong>Pengguna &amp; akses</strong>. Tetapkan workcenter untuk QC Inspector dan Leader sebelum mereka menerima pekerjaan.</p>
-              <ul class="checklist"><li>Production SPV menangani draft lintas workcenter.</li><li>Leader hanya mengedit dan menandatangani workcenter yang ditugaskan.</li><li>QC Inspector hanya memeriksa workcenter tugasnya.</li><li>QC SPV dan QC Dept Head disiapkan sebagai pemberi keputusan akhir.</li></ul>
+              <ul class="checklist"><li>Leader menjadi pemilik utama draft pada workcenter yang ditugaskan.</li><li>Production SPV menjadi backup dan dapat menangani draft lintas workcenter.</li><li>QC Inspector hanya memeriksa workcenter tugasnya.</li><li>QC SPV dan QC Dept Head disiapkan sebagai pemberi keputusan akhir.</li></ul>
               <div class="shot-pair">
                 <figure class="shot detail">
                   <button class="shot-button" type="button" data-zoom="assets/admin-inspector-assignment.png" aria-label="Perbesar pengaturan penugasan QC Inspector">
@@ -356,19 +357,19 @@
 
         <section class="chapter" id="production-spv" data-role-section="production-spv" data-search-section>
           <div class="chapter-head">
-            <span class="role-number">03</span>
+            <span class="role-number">04</span>
             <div>
-              <p class="section-kicker">Pemilik draft utama</p>
+              <p class="section-kicker">Backup lintas workcenter</p>
               <h2>Production SPV</h2>
-              <p class="chapter-summary">Menjadi penanggung jawab utama yang memeriksa draft otomatis, mengoreksi data sebelum terkunci, lalu mengajukan dan menandatanganinya agar proses berpindah ke QC Inspector.</p>
-              <div class="role-tags"><span class="role-tag yes">Edit sebelum terkunci</span><span class="role-tag yes">Ajukan laporan</span><span class="role-tag yes">Tanda tangan pertama</span></div>
+              <p class="chapter-summary">Menjadi penanggung jawab cadangan untuk draft reporting. Production SPV mengambil alih lintas workcenter ketika Leader area tidak tersedia atau membutuhkan dukungan.</p>
+              <div class="role-tags"><span class="role-tag yes">Backup lintas workcenter</span><span class="role-tag yes">Edit sebelum terkunci</span><span class="role-tag yes">Tanda tangan Production</span></div>
             </div>
           </div>
           <div class="steps">
             <article class="step" data-search-item>
               <div class="step-label"><span class="index">1</span><span>Antrean kerja</span></div>
-              <h3>Buka draft yang sudah dibuat otomatis</h3>
-              <p class="step-copy">Setelah Operator berhasil mengirim data, sistem membuat atau menyegarkan draft untuk kombinasi tanggal, workcenter, dan shift yang sama. Buka <strong>Persetujuan → Perlu tindakan saya</strong>, lalu pilih kartu berstatus <strong>Draft</strong>.</p>
+              <h3>Ambil alih draft ketika Leader memerlukan backup</h3>
+              <p class="step-copy">Draft otomatis utamanya ditangani Leader area. Jika Leader tidak tersedia atau ada kebutuhan lintas workcenter, buka <strong>Persetujuan → Perlu tindakan saya</strong>, lalu pilih kartu berstatus <strong>Draft</strong> yang perlu dibantu.</p>
               <div class="shot-pair">
                 <figure class="shot">
                   <button class="shot-button" type="button" data-zoom="assets/production-auto-draft.png" aria-label="Perbesar antrean draft otomatis Production SPV">
@@ -376,7 +377,7 @@
                     <span class="annotation-marker" style="--x:39%;--y:46%" aria-hidden="true">1</span>
                     <span class="annotation-marker" style="--x:91%;--y:20%" aria-hidden="true">2</span>
                   </button>
-                  <figcaption><strong>Draft muncul sebagai tugas Production.</strong><span>Tidak perlu dibentuk ulang setiap kali Operator mengirim.</span></figcaption>
+                  <figcaption><strong>Production SPV menjadi jalur backup.</strong><span>Gunakan ketika draft belum dapat ditangani Leader area.</span></figcaption>
                 </figure>
                 <figure class="shot">
                   <button class="shot-button" type="button" data-zoom="assets/production-generate-report.png" aria-label="Perbesar pilihan lingkup laporan">
@@ -392,7 +393,7 @@
             <article class="step" data-search-item>
               <div class="step-label"><span class="index">2</span><span>Validasi</span></div>
               <h3>Periksa dan koreksi data sebelum mengunci</h3>
-              <p class="step-copy">Cocokkan order, part, output, reject, slot waktu, catatan, dan foto. Production SPV dapat mengedit data selama belum ada tanda tangan Production.</p>
+              <p class="step-copy">Saat mengambil alih, cocokkan order, part, output, reject, slot waktu, catatan, dan foto. Production SPV dapat mengedit data selama belum ada tanda tangan Production.</p>
               <ul class="checklist"><li>Jumlah output dan reject masuk akal.</li><li>Kode reject sesuai temuan.</li><li>Foto dapat dibuka dan memperlihatkan kondisi yang dicatat.</li></ul>
               <figure class="shot detail">
                 <button class="shot-button" type="button" data-zoom="assets/production-entry-review.png" aria-label="Perbesar detail entry produksi">
@@ -443,12 +444,12 @@
 
         <section class="chapter" id="leader" data-role-section="leader" data-search-section>
           <div class="chapter-head">
-            <span class="role-number">04</span>
+            <span class="role-number">03</span>
             <div>
-              <p class="section-kicker">Penanggung jawab area</p>
+              <p class="section-kicker">Pemilik draft utama</p>
               <h2>Leader</h2>
-              <p class="chapter-summary">Menjalankan fungsi tahap Production untuk workcenter yang ditugaskan Admin: memantau input, mengoreksi data yang belum terkunci, serta mengajukan dan menandatangani draft.</p>
-              <div class="role-tags"><span class="role-tag yes">Tersegmentasi per workcenter</span><span class="role-tag yes">Tanda tangan Production</span><span class="role-tag yes">Dapat mengundang Operator</span></div>
+              <p class="chapter-summary">Menjadi pemilik utama draft reporting pada workcenter yang ditugaskan: memantau input, mengoreksi data yang belum terkunci, membuat atau membuka draft, lalu mengajukan dan menandatanganinya.</p>
+              <div class="role-tags"><span class="role-tag yes">Pemilik draft area</span><span class="role-tag yes">Tanda tangan Production</span><span class="role-tag yes">Dapat mengundang Operator</span></div>
             </div>
           </div>
           <div class="steps">
@@ -469,8 +470,8 @@
             </article>
             <article class="step" data-search-item>
               <div class="step-label"><span class="index">2</span><span>Draft &amp; tanda tangan</span></div>
-              <h3>Tindak lanjuti draft dalam workcenter tugas</h3>
-              <p class="step-copy">Buka <strong>Persetujuan</strong>. Leader hanya melihat dan bertindak pada laporan dari workcenter yang ditugaskan. Periksa data, koreksi bila perlu sebelum terkunci, lalu pilih <strong>Ajukan &amp; tandatangani</strong>. Tahap yang dicatat tetap <strong>Production</strong>.</p>
+              <h3>Angkat draft reporting untuk workcenter tugas</h3>
+              <p class="step-copy">Buka <strong>Persetujuan</strong> dan prioritaskan kartu <strong>Draft</strong> dari workcenter Anda. Periksa data, koreksi bila perlu sebelum terkunci, lalu pilih <strong>Ajukan &amp; tandatangani</strong>. Jika draft belum tersedia atau perlu revisi baru, gunakan <strong>Buat laporan</strong>. Tahap yang dicatat tetap <strong>Production</strong>.</p>
               <div class="shot-pair">
                 <figure class="shot">
                   <button class="shot-button" type="button" data-zoom="assets/leader-task-queue.png" aria-label="Perbesar antrean persetujuan Leader">
@@ -478,7 +479,7 @@
                     <span class="annotation-marker" style="--x:41%;--y:45%" aria-hidden="true">1</span>
                     <span class="annotation-marker" style="--x:92%;--y:20%" aria-hidden="true">2</span>
                   </button>
-                  <figcaption><strong>Antrean mengikuti penugasan.</strong><span>Kartu Draft siap ditinjau.</span></figcaption>
+                  <figcaption><strong>Leader memulai alur approval.</strong><span>Kartu Draft pada workcenter tugas menjadi prioritas kerja.</span></figcaption>
                 </figure>
                 <figure class="shot">
                   <button class="shot-button" type="button" data-zoom="assets/leader-sign-production.png" aria-label="Perbesar konfirmasi tanda tangan Leader">
@@ -516,7 +517,7 @@
             <div>
               <p class="section-kicker">Pengawasan produksi</p>
               <h2>Production Dept Head</h2>
-              <p class="chapter-summary">Memantau laporan dan keputusan Production. Pada alur laporan baru, tindakan tahap Production tetap dilakukan oleh Production SPV atau Leader yang ditugaskan.</p>
+              <p class="chapter-summary">Memantau laporan dan keputusan Production. Pada alur laporan baru, Leader area menjadi penanggung jawab utama draft; Production SPV menjadi backup lintas workcenter.</p>
               <div class="role-tags"><span class="role-tag yes">Pantau laporan</span><span class="role-tag yes">Lihat jejak keputusan</span><span class="role-tag no">Tidak edit / tanda tangan alur baru</span></div>
             </div>
           </div>
@@ -538,9 +539,9 @@
             </article>
             <article class="step" data-search-item>
               <div class="step-label"><span class="index">2</span><span>Eskalasi</span></div>
-              <h3>Arahkan tindakan ke Production SPV atau Leader</h3>
-              <p class="step-copy">Jika draft perlu segera diputus, hubungi Production SPV. Untuk area yang sudah mempunyai Leader, pastikan Admin memberi penugasan workcenter yang benar agar Leader dapat membuka dan menandatangani draft tersebut.</p>
-              <ul class="checklist"><li>Production SPV: dapat bertindak lintas workcenter.</li><li>Leader: hanya dapat bertindak pada workcenter tugas.</li><li>Production Dept Head: memantau status dan Jejak keputusan.</li></ul>
+              <h3>Arahkan tindakan ke Leader, lalu eskalasi ke Production SPV</h3>
+              <p class="step-copy">Jika draft perlu segera diputus, hubungi Leader area terlebih dahulu. Pastikan Admin sudah memberi penugasan workcenter yang benar. Bila Leader tidak tersedia atau pekerjaan perlu ditangani lintas area, eskalasi ke Production SPV sebagai backup.</p>
+              <ul class="checklist"><li>Leader: pemilik utama draft pada workcenter tugas.</li><li>Production SPV: backup dan dapat bertindak lintas workcenter.</li><li>Production Dept Head: memantau status dan Jejak keputusan.</li></ul>
               <div class="callout warning"><strong>Jangan mencari tombol tanda tangan pada role ini.</strong> Pada alur baru, Production Dept Head tidak mengedit data, membuat draft, atau memberikan tanda tangan tahap Production.</div>
             </article>
           </div>
@@ -830,8 +831,8 @@
               <thead><tr><th>Peran</th><th>Input data</th><th>Edit sebelum Production sign</th><th>Ajukan / tanda tangan</th><th>Sesudah terkunci</th></tr></thead>
               <tbody>
                 <tr><td>Operator</td><td class="yes-text">Ya, data sendiri</td><td class="yes-text">Ya, data sendiri</td><td class="no-text">Tidak</td><td class="no-text">Baca status</td></tr>
-                <tr><td>Production SPV</td><td class="no-text">Tidak</td><td class="yes-text">Ya</td><td class="yes-text">Tahap Production utama</td><td class="no-text">Baca / tindak lanjut revisi</td></tr>
-                <tr><td>Leader</td><td class="no-text">Tidak</td><td class="yes-text">Ya, workcenter tugas</td><td class="yes-text">Tahap Production, workcenter tugas</td><td class="no-text">Baca / tindak lanjut revisi</td></tr>
+                <tr><td>Leader</td><td class="no-text">Tidak</td><td class="yes-text">Ya, workcenter tugas</td><td class="yes-text">Tahap Production utama, workcenter tugas</td><td class="no-text">Baca / tindak lanjut revisi</td></tr>
+                <tr><td>Production SPV</td><td class="no-text">Tidak</td><td class="yes-text">Ya</td><td class="yes-text">Backup tahap Production lintas workcenter</td><td class="no-text">Baca / tindak lanjut revisi</td></tr>
                 <tr><td>Production Dept Head</td><td class="no-text">Tidak</td><td class="no-text">Tidak</td><td class="no-text">Tidak pada alur baru</td><td class="no-text">Pantau / eskalasi</td></tr>
                 <tr><td>QC Inspector</td><td class="no-text">Tidak</td><td class="yes-text">Ya, workcenter tugas</td><td class="yes-text">Tahap QC Inspector</td><td class="no-text">Putuskan, tanpa edit data</td></tr>
                 <tr><td>QC SPV</td><td class="no-text">Tidak</td><td class="yes-text">Ya</td><td class="yes-text">Tahap QC akhir</td><td class="no-text">Putuskan, tanpa edit data</td></tr>
@@ -886,13 +887,13 @@
             <article class="step" data-search-item>
               <div class="step-label"><span class="index">2</span><span>Notifikasi Production</span></div>
               <h3>Draft otomatis dilihat dari aplikasi</h3>
-              <p class="step-copy">Pada alur saat ini, draft baru <strong>tidak mengirim email Production</strong>. Production SPV dan Leader membuka bel atau menu <strong>Persetujuan</strong> untuk melihat draft yang perlu ditandatangani.</p>
+              <p class="step-copy">Pada alur saat ini, draft baru <strong>tidak mengirim email Production</strong>. Leader area membuka bel atau menu <strong>Persetujuan</strong> sebagai penanggung jawab utama; Production SPV memeriksa antrean yang perlu dibantu sebagai backup.</p>
               <figure class="shot">
-                <button class="shot-button" type="button" data-zoom="assets/production-auto-draft.png" aria-label="Perbesar antrean draft Production">
-                  <img src="assets/production-auto-draft.png" alt="Draft otomatis tampil pada antrean Production SPV" loading="lazy">
+                <button class="shot-button" type="button" data-zoom="assets/leader-task-queue.png" aria-label="Perbesar antrean draft Leader">
+                  <img src="assets/leader-task-queue.png" alt="Draft otomatis tampil pada antrean Leader sesuai workcenter tugas" loading="lazy">
                   <span class="annotation-marker" style="--x:40%;--y:45%" aria-hidden="true">1</span>
                 </button>
-                <figcaption><strong>Bel dan Persetujuan adalah sumber tugas tahap Production.</strong><span>Email mulai digunakan setelah laporan masuk ke QC Inspector.</span></figcaption>
+                <figcaption><strong>Leader memulai dari antrean draft.</strong><span>Production SPV mengambil alih hanya bila diperlukan; email mulai setelah laporan masuk ke QC Inspector.</span></figcaption>
                 <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Buka kartu berstatus Draft untuk memulai review.</li></ol>
               </figure>
             </article>
@@ -942,11 +943,12 @@
             <details data-search-item><summary>Operator lupa PIN—apa yang dilakukan?</summary><p>Hubungi Admin. Admin memverifikasi identitas, mereset PIN, dan bila perlu mencabut sesi lama. Operator lalu masuk menggunakan PIN baru.</p></details>
             <details data-search-item><summary>Mengapa data produksi tidak bisa diedit?</summary><p>Kemungkinan sudah ada tanda tangan Production. Data otomatis terkunci setelah tanda tangan pertama agar isi laporan yang disetujui tidak berubah diam-diam.</p></details>
             <details data-search-item><summary>Kapan draft laporan dibuat?</summary><p>Draft dibuat otomatis setelah input Operator berhasil. Input berikutnya pada tanggal, workcenter, dan shift yang sama akan menyegarkan draft selama draft itu belum ditandatangani.</p></details>
+            <details data-search-item><summary>Siapa yang utama mengangkat draft ke persetujuan?</summary><p>Leader area menjadi penanggung jawab utama untuk workcenter tugasnya. Production SPV menjadi backup jika Leader tidak tersedia atau dibutuhkan penanganan lintas workcenter.</p></details>
             <details data-search-item><summary>QC Inspector tidak melihat laporan tertentu?</summary><p>Periksa apakah laporan sudah ditandatangani Production dan apakah workcenter tersebut masuk ke penugasan QC Inspector. Jika tidak sesuai, minta Admin memperbaiki penugasan.</p></details>
             <details data-search-item><summary>Leader tidak melihat workcenter atau laporan?</summary><p>Minta Admin memeriksa Penugasan &amp; email reviewer. Leader hanya dapat mengedit, membuat revisi, dan menandatangani laporan pada workcenter yang ditugaskan.</p></details>
             <details data-search-item><summary>Apakah QC SPV dan QC Dept Head harus sama-sama menyetujui?</summary><p>Tidak. Salah satu persetujuan QC sudah menyelesaikan tahap akhir.</p></details>
             <details data-search-item><summary>Siapa dapat membuat link undangan Operator?</summary><p>Admin selalu dapat membuatnya. Production SPV dan Leader dapat membuat link setelah Admin mengaktifkan izin pada akun mereka. Role lain tidak dapat mengundang Operator.</p></details>
-            <details data-search-item><summary>Apakah Production Dept Head dapat menandatangani draft?</summary><p>Tidak pada alur laporan baru. Dept Head memantau status dan mengeskalasi tindakan kepada Production SPV atau Leader yang ditugaskan.</p></details>
+            <details data-search-item><summary>Apakah Production Dept Head dapat menandatangani draft?</summary><p>Tidak pada alur laporan baru. Dept Head memantau status, mengarahkan tindakan ke Leader area, lalu mengeskalasi ke Production SPV bila diperlukan.</p></details>
             <details data-search-item><summary>Foto dari kamera tidak terbuka di HP?</summary><p>Pastikan izin kamera untuk browser aktif. Jika tetap tidak terbuka, ambil foto lewat aplikasi Kamera lalu pilih file tersebut dari galeri.</p></details>
             <details data-search-item><summary>Email tugas tidak diterima?</summary><p>Cek folder spam, pastikan alamat email pada akun benar, lalu gunakan bel di aplikasi untuk melihat antrean. Hubungi Admin bila email tetap tidak masuk.</p></details>
             <details data-search-item><summary>Bagaimana melihat riwayat penolakan?</summary><p>Admin atau reviewer membuka Jejak keputusan lalu memfilter report ID, workcenter, tahap, atau keputusan. Viewer memeriksa status dan penanda tangan dari halaman Tinjauan laporan.</p></details>

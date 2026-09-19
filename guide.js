@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const guideMain = document.querySelector('.guide-main');
+  const leaderChapter = document.querySelector('#leader');
+  const productionSpvChapter = document.querySelector('#production-spv');
+  if (guideMain && leaderChapter && productionSpvChapter) {
+    guideMain.insertBefore(leaderChapter, productionSpvChapter);
+  }
+
   const roleButtons = [...document.querySelectorAll('[data-role-filter]')];
   const roleSections = [...document.querySelectorAll('[data-role-section]')];
   const roleNavButtons = [...document.querySelectorAll('[data-role-nav]')];
