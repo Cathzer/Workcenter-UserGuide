@@ -101,11 +101,11 @@ img{display:block;max-width:100%}
 .rule strong{display:block;margin-bottom:8px;color:var(--crimson);font-size:14px}
 .rule span{display:block;color:var(--soft);font-size:14px;line-height:1.55}
 .flow-map{overflow-x:auto;padding:10px 0 44px}
-.flow-track{display:grid;grid-template-columns:repeat(5,minmax(135px,1fr));gap:20px;min-width:760px}
+.flow-track{display:grid;grid-template-columns:repeat(6,minmax(125px,1fr));gap:20px;min-width:900px}
 .flow-node{position:relative;border-top:4px solid var(--crimson);padding:17px 0 0}
 .flow-node:not(:last-child)::after{content:'›';position:absolute;right:-19px;top:10px;color:var(--crimson);font-family:var(--serif);font-size:30px}
-.flow-node:nth-child(4){border-color:var(--green)}
-.flow-node:nth-child(5){border-color:var(--citrus)}
+.flow-node:nth-child(4),.flow-node:nth-child(5){border-color:var(--green)}
+.flow-node:nth-child(6){border-color:var(--citrus)}
 .flow-node small{display:block;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 .flow-node strong{display:block;margin:8px 0 6px;font-size:17px;line-height:1.3}
 .flow-node p{margin:0;color:var(--soft);font-size:13px;line-height:1.5}

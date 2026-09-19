@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observed = [
       document.querySelector('#ringkasan'),
       ...roleSections,
+      document.querySelector('#monitoring'),
       document.querySelector('#hak-akses'),
       document.querySelector('#email'),
       document.querySelector('#faq'),
