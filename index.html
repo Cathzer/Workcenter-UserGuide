@@ -448,8 +448,8 @@
             <div>
               <p class="section-kicker">Pemilik draft utama</p>
               <h2>Leader</h2>
-              <p class="chapter-summary">Menjadi pemilik utama draft reporting pada workcenter yang ditugaskan: memantau input, mengoreksi data yang belum terkunci, membuat atau membuka draft, lalu mengajukan dan menandatanganinya.</p>
-              <div class="role-tags"><span class="role-tag yes">Pemilik draft area</span><span class="role-tag yes">Tanda tangan Production</span><span class="role-tag yes">Dapat mengundang Operator</span></div>
+              <p class="chapter-summary">Menjadi pemilik utama draft reporting pada workcenter yang ditugaskan: memantau input, memakai <strong>Edit data produksi</strong> untuk koreksi, memakai <strong>Buat laporan</strong> untuk membentuk draft atau revisi, lalu mengajukan dan menandatanganinya.</p>
+              <div class="role-tags"><span class="role-tag yes">Edit data produksi</span><span class="role-tag yes">Buat laporan</span><span class="role-tag yes">Tanda tangan Production</span><span class="role-tag yes">Dapat mengundang Operator</span></div>
             </div>
           </div>
           <div class="steps">
@@ -469,9 +469,38 @@
               </figure>
             </article>
             <article class="step" data-search-item>
-              <div class="step-label"><span class="index">2</span><span>Draft &amp; tanda tangan</span></div>
-              <h3>Angkat draft reporting untuk workcenter tugas</h3>
-              <p class="step-copy">Buka <strong>Persetujuan</strong> dan prioritaskan kartu <strong>Draft</strong> dari workcenter Anda. Periksa data, koreksi bila perlu sebelum terkunci, lalu pilih <strong>Ajukan &amp; tandatangani</strong>. Jika draft belum tersedia atau perlu revisi baru, gunakan <strong>Buat laporan</strong>. Tahap yang dicatat tetap <strong>Production</strong>.</p>
+              <div class="step-label"><span class="index">2</span><span>Koreksi data sumber</span></div>
+              <h3>Gunakan “Edit data produksi” untuk memperbaiki isi</h3>
+              <p class="step-copy">Buka <strong>Data produksi</strong>, cari entry dari workcenter tugas, buka detailnya, lalu pilih <strong>Edit data produksi</strong>. Fungsi ini mengubah data sumber—misalnya order, part, output, reject, atau catatan—bukan sekadar tampilan laporan.</p>
+              <div class="leader-action-map" aria-label="Perbedaan Edit data produksi dan Buat laporan">
+                <div class="leader-action-card edit-action">
+                  <span class="leader-action-label">Ubah isi</span>
+                  <strong>Edit data produksi</strong>
+                  <p>Pakai saat nilai input Operator perlu dikoreksi. Alasan perubahan wajib diisi dan tersimpan dalam Jejak keputusan.</p>
+                </div>
+                <div class="leader-action-card report-action">
+                  <span class="leader-action-label">Bentuk dokumen</span>
+                  <strong>Buat laporan</strong>
+                  <p>Pakai setelah data benar untuk mengambil kondisi terbaru menjadi draft atau revisi laporan.</p>
+                </div>
+              </div>
+              <ul class="checklist"><li>Leader hanya dapat mengedit entry dari workcenter yang ditugaskan.</li><li>Edit tersedia selama belum ada tanda tangan Production pertama.</li><li>Jika draft sudah ada, koreksi akan membatalkan draft lama agar data lama tidak ikut disetujui.</li><li>Setelah menyimpan koreksi, lanjutkan dengan <strong>Buat laporan</strong> untuk membentuk revisi terbaru.</li></ul>
+              <figure class="shot detail">
+                <button class="shot-button" type="button" data-zoom="assets/production-entry-review.png" aria-label="Perbesar tombol Edit data produksi pada detail entry">
+                  <img src="assets/production-entry-review.png" alt="Detail entry dengan tombol Edit data produksi, identitas produksi, bukti, dan reject" loading="lazy">
+                  <span class="annotation-marker" style="--x:18%;--y:12%" aria-hidden="true">1</span>
+                  <span class="annotation-marker" style="--x:50%;--y:36%" aria-hidden="true">2</span>
+                  <span class="annotation-marker" style="--x:48%;--y:71%" aria-hidden="true">3</span>
+                </button>
+                <figcaption><strong>Edit dilakukan dari detail entry.</strong><span>Periksa seluruh isi sebelum membuka form koreksi.</span></figcaption>
+                <ol class="annotation-key" aria-label="Keterangan anotasi"><li><b>1</b> Pilih Edit data produksi.</li><li><b>2</b> Cocokkan identitas dan jumlah produksi.</li><li><b>3</b> Periksa reject serta bukti sebelum mengubah.</li></ol>
+              </figure>
+              <div class="callout warning"><strong>Edit tidak langsung mengajukan laporan.</strong> Koreksi hanya memperbarui data produksi. Leader tetap harus membuka <strong>Buat laporan</strong> agar data terbaru masuk ke draft/revisi yang akan ditandatangani.</div>
+            </article>
+            <article class="step" data-search-item>
+              <div class="step-label"><span class="index">3</span><span>Draft &amp; tanda tangan</span></div>
+              <h3>Gunakan “Buat laporan” untuk membentuk draft atau revisi</h3>
+              <p class="step-copy">Buka <strong>Persetujuan</strong>. Jika draft otomatis sudah tersedia, buka kartunya. Jika belum tersedia, data baru saja dikoreksi, atau Anda perlu revisi baru, pilih <strong>Buat laporan</strong>, lalu tentukan tanggal produksi, workcenter tugas, dan shift yang tepat.</p>
               <div class="shot-pair">
                 <figure class="shot">
                   <button class="shot-button" type="button" data-zoom="assets/leader-task-queue.png" aria-label="Perbesar antrean persetujuan Leader">
@@ -479,7 +508,7 @@
                     <span class="annotation-marker" style="--x:41%;--y:45%" aria-hidden="true">1</span>
                     <span class="annotation-marker" style="--x:92%;--y:20%" aria-hidden="true">2</span>
                   </button>
-                  <figcaption><strong>Leader memulai alur approval.</strong><span>Kartu Draft pada workcenter tugas menjadi prioritas kerja.</span></figcaption>
+                  <figcaption><strong>Dua cara membuka pekerjaan Leader.</strong><span>Buka kartu Draft yang ada atau pilih Buat laporan untuk membentuk draft/revisi.</span></figcaption>
                 </figure>
                 <figure class="shot">
                   <button class="shot-button" type="button" data-zoom="assets/leader-sign-production.png" aria-label="Perbesar konfirmasi tanda tangan Leader">
@@ -491,10 +520,12 @@
                   <figcaption><strong>Tanda tangan Leader menjadi tahap Production.</strong><span>Konfirmasi juga mengunci data.</span></figcaption>
                 </figure>
               </div>
-              <ol class="annotation-key paired-key" aria-label="Keterangan anotasi"><li><b>1</b> Buka draft di lingkup kerja.</li><li><b>2</b> Buat revisi manual hanya bila perlu.</li><li><b>3</b> Cocokkan lingkup dan ringkasan.</li><li><b>4</b> Beri consent untuk revisi ini.</li><li><b>5</b> Ajukan dan kunci data.</li></ol>
+              <ol class="annotation-key paired-key" aria-label="Keterangan anotasi"><li><b>1</b> Buka kartu Draft jika sudah tersedia.</li><li><b>2</b> Pilih Buat laporan setelah koreksi atau saat perlu revisi baru.</li><li><b>3</b> Cocokkan lingkup dan ringkasan draft.</li><li><b>4</b> Beri persetujuan penggunaan tanda tangan.</li><li><b>5</b> Ajukan, tandatangani, dan kunci data.</li></ol>
+              <ul class="checklist"><li><strong>Buat laporan</strong> tidak mengubah angka produksi; fungsi ini mengambil data terbaru menjadi snapshot draft.</li><li>Pastikan tanggal, workcenter, dan shift sesuai sebelum membuat draft.</li><li>Buka draft yang terbentuk, periksa ringkasannya, lalu pilih <strong>Ajukan &amp; tandatangani</strong>.</li><li>Sesudah ditandatangani, status berpindah ke QC Inspector dan data tidak dapat diedit lagi.</li></ul>
+              <div class="callout"><strong>Urutan aman untuk Leader:</strong> periksa input → Edit data produksi bila ada kesalahan → Buat laporan → periksa draft → Ajukan &amp; tandatangani.</div>
             </article>
             <article class="step" data-search-item>
-              <div class="step-label"><span class="index">3</span><span>Undang Operator</span></div>
+              <div class="step-label"><span class="index">4</span><span>Undang Operator</span></div>
               <h3>Buat link Operator jika Admin memberi izin</h3>
               <p class="step-copy">Menu <strong>Undangan operator</strong> tersedia setelah Admin mengaktifkan izin pada akun Leader. Tetapkan nama, NIK/username, serta workcenter, lalu salin link sekali pakai dan kirimkan secara pribadi. Leader tidak dapat mengundang role pemeriksa.</p>
               <figure class="shot">
@@ -944,6 +975,7 @@
             <details data-search-item><summary>Mengapa data produksi tidak bisa diedit?</summary><p>Kemungkinan sudah ada tanda tangan Production. Data otomatis terkunci setelah tanda tangan pertama agar isi laporan yang disetujui tidak berubah diam-diam.</p></details>
             <details data-search-item><summary>Kapan draft laporan dibuat?</summary><p>Draft dibuat otomatis setelah input Operator berhasil. Input berikutnya pada tanggal, workcenter, dan shift yang sama akan menyegarkan draft selama draft itu belum ditandatangani.</p></details>
             <details data-search-item><summary>Siapa yang utama mengangkat draft ke persetujuan?</summary><p>Leader area menjadi penanggung jawab utama untuk workcenter tugasnya. Production SPV menjadi backup jika Leader tidak tersedia atau dibutuhkan penanganan lintas workcenter.</p></details>
+            <details data-search-item><summary>Apa bedanya Edit data produksi dan Buat laporan?</summary><p><strong>Edit data produksi</strong> memperbaiki nilai sumber sebelum data terkunci. <strong>Buat laporan</strong> mengambil data terbaru tersebut menjadi draft atau revisi yang kemudian diperiksa dan ditandatangani Leader.</p></details>
             <details data-search-item><summary>QC Inspector tidak melihat laporan tertentu?</summary><p>Periksa apakah laporan sudah ditandatangani Production dan apakah workcenter tersebut masuk ke penugasan QC Inspector. Jika tidak sesuai, minta Admin memperbaiki penugasan.</p></details>
             <details data-search-item><summary>Leader tidak melihat workcenter atau laporan?</summary><p>Minta Admin memeriksa Penugasan &amp; email reviewer. Leader hanya dapat mengedit, membuat revisi, dan menandatangani laporan pada workcenter yang ditugaskan.</p></details>
             <details data-search-item><summary>Apakah QC SPV dan QC Dept Head harus sama-sama menyetujui?</summary><p>Tidak. Salah satu persetujuan QC sudah menyelesaikan tahap akhir.</p></details>
